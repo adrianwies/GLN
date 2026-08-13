@@ -7,14 +7,14 @@ if (component) {
   const nav = component.querySelector('nav')
   const menu = component.querySelector('.menu')
   const explore = component.querySelector('.explore')
-  const isProductsPage = window.location.pathname.startsWith('/productos')
-  const activePage = isProductsPage ? 'productos' : 'inicio'
+  const isCatalogPage = window.location.pathname.startsWith('/catalogo')
+  const activePage = isCatalogPage ? 'catalogo' : 'inicio'
 
   component
     .querySelector('[data-page="' + activePage + '"]')
     ?.classList.add('page-active')
 
-  if (isProductsPage) {
+  if (isCatalogPage) {
     header.classList.add('solid')
     explore.href = '/#contacto'
     explore.textContent = 'Consultar ↗'

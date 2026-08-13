@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explora el catálogo de destilados de Grupo de Licores Nacionales." />
+    <meta name="theme-color" content="#092938" />
+    <title>Catálogo | GLN</title>
+  </head>
+  <body>
+    <!-- HEADER_COMPONENT -->
+    <main>
+      <section class="catalog-hero">
+        <div class="hero-copy">
+          <p class="tag">Portafolio GLN · 2026</p>
+          <h1>Encuentra el carácter<br /><em>de tu próxima celebración.</em></h1>
+          <p>Descubre nuestras marcas, compara perfiles y arma una selección a tu medida.</p>
+        </div>
+        <div class="brand-stream" aria-label="Marcas de Grupo de Licores Nacionales">
+          <div class="brand-lane" data-lane="0"><div class="brand-track">
+            <img class="bolaocho" src="/images/logo-bolaocho.png" alt="Bola Ocho" /><img class="jigger" src="/images/logo-jigger.png" alt="Mr. Jigger" /><img class="mariachi" src="/images/logo-mariachi.png" alt="El Mariachi" /><img class="soviet" src="/images/logo-soviet.png" alt="Soviet" /><img class="bandolero" src="/images/logo-bandolero.png" alt="Bandolero" />
+            <img class="bolaocho" src="/images/logo-bolaocho.png" alt="" aria-hidden="true" /><img class="jigger" src="/images/logo-jigger.png" alt="" aria-hidden="true" /><img class="mariachi" src="/images/logo-mariachi.png" alt="" aria-hidden="true" /><img class="soviet" src="/images/logo-soviet.png" alt="" aria-hidden="true" /><img class="bandolero" src="/images/logo-bandolero.png" alt="" aria-hidden="true" />
+          </div></div>
+          <div class="brand-lane" data-lane="1"><div class="brand-track">
+            <img class="mariachi" src="/images/logo-mariachi.png" alt="" aria-hidden="true" /><img class="soviet" src="/images/logo-soviet.png" alt="" aria-hidden="true" /><img class="bandolero" src="/images/logo-bandolero.png" alt="" aria-hidden="true" /><img class="bolaocho" src="/images/logo-bolaocho.png" alt="" aria-hidden="true" /><img class="jigger" src="/images/logo-jigger.png" alt="" aria-hidden="true" />
+            <img class="mariachi" src="/images/logo-mariachi.png" alt="" aria-hidden="true" /><img class="soviet" src="/images/logo-soviet.png" alt="" aria-hidden="true" /><img class="bandolero" src="/images/logo-bandolero.png" alt="" aria-hidden="true" /><img class="bolaocho" src="/images/logo-bolaocho.png" alt="" aria-hidden="true" /><img class="jigger" src="/images/logo-jigger.png" alt="" aria-hidden="true" />
+          </div></div>
+          <div class="brand-lane" data-lane="2"><div class="brand-track">
+            <img class="bandolero" src="/images/logo-bandolero.png" alt="" aria-hidden="true" /><img class="bolaocho" src="/images/logo-bolaocho.png" alt="" aria-hidden="true" /><img class="jigger" src="/images/logo-jigger.png" alt="" aria-hidden="true" /><img class="mariachi" src="/images/logo-mariachi.png" alt="" aria-hidden="true" /><img class="soviet" src="/images/logo-soviet.png" alt="" aria-hidden="true" />
+            <img class="bandolero" src="/images/logo-bandolero.png" alt="" aria-hidden="true" /><img class="bolaocho" src="/images/logo-bolaocho.png" alt="" aria-hidden="true" /><img class="jigger" src="/images/logo-jigger.png" alt="" aria-hidden="true" /><img class="mariachi" src="/images/logo-mariachi.png" alt="" aria-hidden="true" /><img class="soviet" src="/images/logo-soviet.png" alt="" aria-hidden="true" />
+          </div></div>
+        </div>
+      </section>
+
+      <section class="catalog-shell">
+        <div class="catalog-heading">
+          <div><p class="tag">Nuestra selección</p><h2>Todos los destilados</h2></div>
+          <p>Filtra por categoría, marca o perfil. Guarda tus favoritos y crea tu selección para solicitar una cotización.</p>
+        </div>
+
+        <div class="catalog-tools">
+          <label class="search"><span>Buscar</span><input id="search" type="search" placeholder="Nombre, marca o perfil…" autocomplete="off" /><b>⌕</b></label>
+          <label><span>Marca</span><select id="brand-filter"><option value="">Todas las marcas</option></select></label>
+          <label><span>Ordenar</span><select id="sort"><option value="featured">Destacados</option><option value="name">Nombre A–Z</option><option value="category">Categoría</option></select></label>
+          <button class="selection-button" id="open-selection" type="button">Mi selección <strong id="selection-count">0</strong></button>
+        </div>
+
+        <div class="category-tabs" id="category-tabs" aria-label="Filtrar por categoría"></div>
+        <div class="results-line"><p id="results-count" aria-live="polite">Cargando colección…</p><button id="clear-filters" type="button" hidden>Limpiar filtros ×</button></div>
+
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden><span>GLN</span><h3>No encontramos coincidencias</h3><p>Prueba otra búsqueda o limpia los filtros.</p><button type="button">Ver toda la colección</button></div>
+      </section>
+    </main>
+
+    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+    <aside class="selection-drawer" id="selection-drawer" aria-hidden="true" aria-labelledby="selection-title">
+      <div class="drawer-head"><div><p class="tag">Cotización</p><h2 id="selection-title">Mi selección</h2></div><button id="close-selection" type="button" aria-label="Cerrar selección">×</button></div>
+      <div class="selection-list" id="selection-list"></div>
+      <div class="drawer-empty" id="drawer-empty"><p>Aún no agregaste productos.</p><span>Usa el botón “Agregar” en las tarjetas para armar tu selección.</span></div>
+      <a class="quote-link" id="quote-link" href="/#contacto">Solicitar cotización <span>↗</span></a>
+    </aside>
+
+    <!-- FOOTER_COMPONENT -->
+    <script type="module" src="/catalogo/catalogo.js"></script>
+  </body>
+</html>

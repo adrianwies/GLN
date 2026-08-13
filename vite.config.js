@@ -20,7 +20,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         inicio: resolve(import.meta.dirname, 'index.html'),
-        productos: resolve(import.meta.dirname, 'productos/index.html'),
+        catalogo: resolve(import.meta.dirname, 'catalogo/index.html'),
       },
     },
   },
