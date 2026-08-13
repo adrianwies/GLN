@@ -1,0 +1,35 @@
+﻿site-footer {
+  display: block;
+}
+
+site-footer footer {
+  background: var(--color-primary-dark);
+  color: white;
+  padding: 60px var(--space-page) 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+site-footer footer > b {
+  font-size: 60px;
+}
+
+site-footer footer > div {
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  color: #ffffff99;
+}
+
+site-footer footer small {
+  grid-column: 1 / -1;
+  border-top: 1px solid #ffffff22;
+  padding-top: 22px;
+  color: #ffffff77;
+}
+
+@media (max-width: 850px) {
+  site-footer footer {
+    grid-template-columns: 1fr;
+  }
+}
