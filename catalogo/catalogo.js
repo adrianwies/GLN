@@ -2,6 +2,7 @@ import '../src/global.css'
 import './catalogo.css'
 import '../src/components/header/header.js'
 import '../src/components/footer/footer.js'
+import '../src/components/product-card/product-card.css?catalogo'
 import { enableProductCardNavigation, readSelection, renderProductCard, saveSelection } from '../src/components/product-card/product-card.js'
 
 const state = {

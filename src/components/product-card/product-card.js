@@ -1,4 +1,3 @@
-import './product-card.css'
 import productCardMarkup from './product-card.html?raw'
 
 const templateHost = document.createElement('div')
