@@ -75,6 +75,11 @@ async function init() {
     $('#category-filter').insertAdjacentHTML('beforeend', categories.slice(1).map((category) => `<option value="${category}">${category} (${state.products.filter((p) => p.category === category).length})</option>`).join(''))
     const brands = [...new Set(state.products.map((product) => product.brand))].sort()
     $('#brand-filter').insertAdjacentHTML('beforeend', brands.map((brand) => `<option>${brand}</option>`).join(''))
+    const requestedBrand = new URLSearchParams(window.location.search).get('marca')
+    if (requestedBrand && brands.includes(requestedBrand)) {
+      state.brand = requestedBrand
+      $('#brand-filter').value = requestedBrand
+    }
     render()
   } catch (error) {
     $('#results-count').textContent = error.message

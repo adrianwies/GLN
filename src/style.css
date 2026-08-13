@@ -79,18 +79,18 @@ em,h3{
 .hero h1{
   font-size:var(--text-hero)
 }
-.heroText>div{
+.hero-bottom{
   margin-top:auto;
   display:flex;
   justify-content:space-between;
   align-items:end
 }
-.heroText>div p{
+.hero-bottom p{
   max-width:430px;
   line-height:1.7;
   color:#ffffffc9
 }
-.heroText>div a{
+.hero-bottom a{
   margin-left:auto;
   border:1px solid #ffffff99;
   width:65px;
@@ -445,6 +445,13 @@ footer small{
   }
 
 }
+
+.hero-bottom>a:only-child{margin-left:auto}
+
+.hero-heading{position:absolute;left:8vw;top:50%;transform:translateY(-50%)}
+.hero-heading .tag{margin:0}.hero-heading h1{margin:25px 0 0}
+
+
 @media(prefers-reduced-motion:reduce){
   *{
     scroll-behavior:auto
@@ -536,6 +543,8 @@ footer small{
     height:380px;
   }
 }
+
+@media(max-width:850px){.hero-heading{left:24px;right:24px}.hero-heading h1{margin-top:20px}}
 
 
 

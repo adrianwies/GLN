@@ -506,3 +506,44 @@ body .products .product-carousel > article.card:hover .pic img {
     padding-bottom: 12px;
   }
 }
+
+/* Solo normalización vertical de la información; conserva diagonales y offsets laterales. */
+body .products .product-carousel > article.card .info,
+body .products .product-carousel > article.card:first-child .info,
+body .products .product-carousel.show-end > article.card:nth-child(2) .info,
+body .products .product-carousel > article.card:nth-child(4) .info,
+body .products .product-carousel > article.card:nth-child(5) .info {
+  box-sizing: border-box;
+  min-height: 92px !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+body .products .product-carousel > article.card .info small,
+body .products .product-carousel > article.card:first-child .info small {
+  margin-top: 0 !important;
+  margin-bottom: 5px !important;
+}
+
+body .products .product-carousel > article.card .info h3,
+body .products .product-carousel > article.card:first-child .info h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+body .products .product-carousel > article.card .info span,
+body .products .product-carousel > article.card:first-child .info span {
+  margin-top: 9px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Centro vertical exacto de las imágenes actuales. */
+@media (min-width:851px) {
+  .products .carousel-arrow {
+    top: clamp(150px, calc((100svh - 390px) / 2), 180px);
+  }
+}
+
+@media (max-width:850px) {
+  .products .carousel-arrow { top:170px }
+}
