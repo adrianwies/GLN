@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Explora el catálogo de destilados de Grupo de Licores Nacionales." />
     <meta name="theme-color" content="#092938" />
+    <link rel="icon" type="image/png" href="/images/gln-icon.png" />
     <title>Catálogo | GLN</title>
   </head>
   <body>
@@ -40,28 +41,21 @@
 
         <div class="catalog-tools">
           <label class="search"><span>Buscar</span><input id="search" type="search" placeholder="Nombre, marca o perfil…" autocomplete="off" /><b>⌕</b></label>
+          <label><span>Tipo de bebida</span><select id="category-filter"><option value="Todos">Todos los tipos</option></select></label>
           <label><span>Marca</span><select id="brand-filter"><option value="">Todas las marcas</option></select></label>
           <label><span>Ordenar</span><select id="sort"><option value="featured">Destacados</option><option value="name">Nombre A–Z</option><option value="category">Categoría</option></select></label>
-          <button class="selection-button" id="open-selection" type="button">Mi selección <strong id="selection-count">0</strong></button>
+          <button class="clear-button" id="clear-filters" type="button">Limpiar filtros ×</button>
         </div>
 
-        <div class="category-tabs" id="category-tabs" aria-label="Filtrar por categoría"></div>
-        <div class="results-line"><p id="results-count" aria-live="polite">Cargando colección…</p><button id="clear-filters" type="button" hidden>Limpiar filtros ×</button></div>
+        <div class="results-line"><p id="results-count" aria-live="polite">Cargando colección…</p></div>
 
         <div class="product-grid" id="product-grid" aria-live="polite"></div>
-        <div class="empty-state" id="empty-state" hidden><span>GLN</span><h3>No encontramos coincidencias</h3><p>Prueba otra búsqueda o limpia los filtros.</p><button type="button">Ver toda la colección</button></div>
+        <div class="empty-state" id="empty-state" hidden><img src="/images/gln-icon.png" alt="GLN" /><h3>No encontramos coincidencias</h3><p>Prueba otra búsqueda o limpia los filtros.</p><button type="button">Ver toda la colección</button></div>
       </section>
     </main>
 
-    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
-    <aside class="selection-drawer" id="selection-drawer" aria-hidden="true" aria-labelledby="selection-title">
-      <div class="drawer-head"><div><p class="tag">Cotización</p><h2 id="selection-title">Mi selección</h2></div><button id="close-selection" type="button" aria-label="Cerrar selección">×</button></div>
-      <div class="selection-list" id="selection-list"></div>
-      <div class="drawer-empty" id="drawer-empty"><p>Aún no agregaste productos.</p><span>Usa el botón “Agregar” en las tarjetas para armar tu selección.</span></div>
-      <a class="quote-link" id="quote-link" href="/#contacto">Solicitar cotización <span>↗</span></a>
-    </aside>
-
     <!-- FOOTER_COMPONENT -->
+    <!-- CART_COMPONENT -->
     <script type="module" src="/catalogo/catalogo.js"></script>
   </body>
 </html>

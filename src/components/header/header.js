@@ -1,5 +1,7 @@
 ﻿import './header.css'
 
+import '../cart-drawer/cart-drawer.js'
+
 const component = document.querySelector('site-header')
 
 if (component) {
@@ -16,8 +18,7 @@ if (component) {
 
   if (isCatalogPage) {
     header.classList.add('solid')
-    explore.href = '/#contacto'
-    explore.textContent = 'Consultar ↗'
+    explore.href = '#carrito'
   } else {
     window.addEventListener(
       'scroll',
@@ -25,6 +26,15 @@ if (component) {
       { passive: true },
     )
   }
+
+  const updateCartCount = () => {
+    let selection = []
+    try { selection = JSON.parse(localStorage.getItem('gln-selection') || '[]') } catch {}
+    component.querySelector('[data-cart-count]').textContent = selection.length
+  }
+  updateCartCount()
+  window.addEventListener('gln-selection-change', updateCartCount)
+  window.addEventListener('storage', updateCartCount)
 
   menu.addEventListener('click', () => {
     const open = nav.classList.toggle('open')

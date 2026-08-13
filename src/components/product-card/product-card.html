@@ -1,0 +1,21 @@
+<template id="product-card-template">
+  <article class="product-card reveal visible" tabindex="0" role="link">
+    <div class="product-visual">
+      <img class="product-watermark" src="/images/gln-icon.png" alt="" aria-hidden="true" />
+      <img class="product-photo" data-product-photo loading="lazy" />
+      <img class="brand-logo" data-product-logo loading="lazy" />
+      <span class="badge" data-product-badge></span>
+      <a class="product-arrow" data-product-link>↗</a>
+    </div>
+    <div class="product-meta">
+      <div>
+        <small data-product-specs></small>
+        <h3><a data-product-name data-product-link></a></h3>
+        <p data-product-notes></p>
+      </div>
+      <button class="add-button" data-select type="button">
+        <span data-add-label>Agregar</span><b aria-hidden="true">+</b>
+      </button>
+    </div>
+  </article>
+</template>
