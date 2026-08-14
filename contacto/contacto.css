@@ -96,3 +96,7 @@
 @media(max-width:560px){.contact-form{padding:25px 22px;gap:22px}}
 /* Columnas con la misma altura */
 .contact-form{align-self:stretch;height:100%}
+
+
+/* RESPONSIVE CONTACTO 2026 */
+@media(max-width:1100px) and (min-width:851px){.contact-content{gap:50px}.contact-form{padding:32px}.contact-intro h2{font-size:clamp(2.3rem,4vw,3.4rem)}}@media(max-width:850px){.contact-content{grid-template-columns:1fr;padding-left:24px;padding-right:24px}.contact-form{height:auto;min-height:0}.contact-intro{max-width:680px}.contact-direct{max-width:620px}}@media(max-width:560px){.contact-hero{padding-left:20px;padding-right:20px}.contact-content{padding-left:20px;padding-right:20px}.contact-intro h2{font-size:clamp(2.1rem,10vw,2.9rem)}.contact-form{grid-template-columns:1fr;padding:25px 20px}.contact-form label{grid-column:1}.contact-direct a,.contact-direct p{grid-template-columns:1fr;gap:4px}.contact-form button{padding:17px 16px}}@media(max-width:360px){.contact-hero,.contact-content{padding-left:16px;padding-right:16px}.contact-form{padding-inline:16px}.contact-direct a,.contact-direct p{font-size:.7rem}}

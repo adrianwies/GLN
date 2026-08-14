@@ -37,3 +37,6 @@
 /* Separación banner/contenido compartida con Catálogo */
 .manifesto{padding-top:28px}
 @media(max-width:650px){.manifesto{padding-top:25px}}
+
+/* RESPONSIVE NOSOTROS 2026 */
+@media(max-width:1100px) and (min-width:851px){.about-hero{grid-template-columns:1fr 1fr}.manifesto{grid-template-columns:minmax(120px,.45fr) 2.55fr}.direction-card{min-height:430px}.commitment{gap:5vw}}@media(max-width:850px){.about-hero{padding-left:24px;padding-right:24px}.manifesto,.principles,.commitment{padding-left:24px;padding-right:24px}.copy-columns{grid-template-columns:1fr}.direction-card{min-height:350px}.principles-list article{grid-template-columns:40px minmax(0,1fr)}.commitment-seal{min-height:300px}}@media(max-width:520px){.about-hero{padding-left:20px;padding-right:20px}.hero-intro h1{font-size:clamp(2.55rem,11.5vw,3.5rem)}.hero-summary{font-size:.88rem;line-height:1.6}.manifesto,.principles,.commitment{padding-left:20px;padding-right:20px}.direction-card{padding:42px 20px;min-height:310px}.principles-list article{grid-template-columns:32px minmax(0,1fr);padding:22px 0}.commitment-seal{min-height:240px}.commitment-copy li{grid-template-columns:38px 1fr}.cta{width:100%;justify-content:space-between}}

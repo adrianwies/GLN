@@ -1,4 +1,4 @@
-﻿/* Showcase de productos inspirado en paneles editoriales */
+/* Showcase de productos inspirado en paneles editoriales */
 .products .carousel-stage {
   width: 100%;
   overflow: hidden;
@@ -547,3 +547,7 @@ body .products .product-carousel > article.card:first-child .info span {
 @media (max-width:850px) {
   .products .carousel-arrow { top:170px }
 }
+
+
+/* RESPONSIVE SHOWCASE 2026 */
+@media(max-width:1100px) and (min-width:851px){body .products .product-carousel>article.card{flex-basis:33.333%!important;width:33.333%!important;min-width:33.333%!important;max-width:33.333%!important}}@media(max-width:850px){body .products .product-carousel>article.card,body .products .product-carousel.show-end>article.card:nth-child(4),body .products .product-carousel.show-end>article.card:nth-child(5){flex-basis:min(82vw,520px)!important;width:min(82vw,520px)!important;min-width:min(82vw,520px)!important;max-width:min(82vw,520px)!important}body .products .product-carousel>article.card .pic{height:clamp(300px,62vw,390px)}body .products .product-carousel>article.card:nth-child(n) .info{transform:none}}@media(max-width:480px){body .products .product-carousel>article.card,body .products .product-carousel.show-end>article.card:nth-child(4),body .products .product-carousel.show-end>article.card:nth-child(5){flex-basis:88vw!important;width:88vw!important;min-width:88vw!important;max-width:88vw!important}body .products .product-carousel>article.card .pic{height:300px}.carousel-arrow{width:36px;height:36px;top:150px}}

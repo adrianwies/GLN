@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,500&display=swap');
 
 :root{
 
@@ -187,3 +187,7 @@ button,input,select,textarea{
 
 
 
+
+
+/* RESPONSIVE ROOT 2026 */
+html{overflow-x:hidden;-webkit-text-size-adjust:100%}body{overflow-x:clip}main,section,article,div,form{min-width:0}img,video,svg{max-width:100%}h1,h2,h3,p,a{overflow-wrap:break-word}@media(max-width:650px){:root{--space-page:1.25rem;--space-section:clamp(3rem,12vw,4rem);--header-height:78px;--text-body:.875rem}.tag{line-height:1.45}.tag:before{flex:0 0 24px}}@media(max-width:380px){:root{--space-page:1rem}.tag{font-size:.58rem;letter-spacing:.16em}}

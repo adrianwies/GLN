@@ -12,3 +12,7 @@ site-footer>.alcohol-warning{display:block;width:100%;margin:0;padding:14px var(
 @media(max-width:650px){.whatsapp-float{right:16px;bottom:16px;width:54px;height:54px}.whatsapp-float>svg{width:29px;height:29px}.whatsapp-preview{right:0;bottom:calc(100% + 12px);width:min(270px,calc(100vw - 32px));transform:translateY(8px) scale(.97)}.whatsapp-preview:after{right:20px;bottom:-7px}.whatsapp-float:hover .whatsapp-preview,.whatsapp-float:focus-visible .whatsapp-preview{transform:none}}
 
 .footer-contact>h2{color:#fff}
+
+
+/* RESPONSIVE FOOTER 2026 */
+@media(max-width:900px){.site-footer{grid-template-columns:1.3fr 1fr 1fr;gap:34px 28px}.footer-brand{grid-column:1/-1;max-width:460px}.footer-contact,.footer-info{margin-top:0}}@media(max-width:650px){.site-footer{grid-template-columns:1fr 1fr;padding:38px 20px 18px;gap:32px 22px}.footer-contact,.footer-info{grid-column:auto}.footer-contact{grid-column:1/-1}.footer-brand{max-width:340px}}@media(max-width:440px){.site-footer{grid-template-columns:1fr;gap:28px}.footer-brand,.footer-contact,.footer-info,.footer-column{grid-column:1}.footer-logo{width:min(185px,70vw)}.footer-bottom{margin-top:2px}.whatsapp-preview{width:min(270px,calc(100vw - 24px))}}
