@@ -10,13 +10,14 @@ if (component) {
   const menu = component.querySelector('.menu')
   const explore = component.querySelector('.explore')
   const isCatalogPage = window.location.pathname.startsWith('/catalogo')
-  const activePage = isCatalogPage ? 'catalogo' : 'inicio'
+  const isAboutPage = window.location.pathname.startsWith('/nosotros')
+  const activePage = isCatalogPage ? 'catalogo' : isAboutPage ? 'nosotros' : 'inicio'
 
   component
     .querySelector('[data-page="' + activePage + '"]')
     ?.classList.add('page-active')
 
-  if (isCatalogPage) {
+  if (isCatalogPage || isAboutPage) {
     header.classList.add('solid')
     explore.href = '#carrito'
   } else {

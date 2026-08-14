@@ -35,6 +35,7 @@ export default defineConfig({
         inicio: resolve(import.meta.dirname, 'index.html'),
         catalogo: resolve(import.meta.dirname, 'catalogo/index.html'),
         producto: resolve(import.meta.dirname, 'catalogo/producto/index.html'),
+        nosotros: resolve(import.meta.dirname, 'nosotros/index.html'),
       },
     },
   },
