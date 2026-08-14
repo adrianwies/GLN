@@ -1,4 +1,5 @@
 import productCardMarkup from './product-card.html?raw'
+import { cartQuantity, formatPrice } from '../cart-drawer/cart-store.js'
 
 const templateHost = document.createElement('div')
 templateHost.innerHTML = productCardMarkup
@@ -7,8 +8,9 @@ const productCardTemplate = templateHost.querySelector('#product-card-template')
 export const productUrl = (product) => `/catalogo/producto/${product.slug}`
 
 export function renderProductCard(product, options = {}) {
-  const { selected = false, index = 0 } = options
+  const { quantity = 0, index = 0 } = options
   const url = productUrl(product)
+  const currentQuantity = cartQuantity({ [product.slug]: quantity }, product.slug)
   const fragment = productCardTemplate.content.cloneNode(true)
   const card = fragment.querySelector('.product-card')
   const visual = card.querySelector('.product-visual')
@@ -29,6 +31,7 @@ export function renderProductCard(product, options = {}) {
   card.querySelector('[data-product-specs]').textContent = `${product.category} · ${product.volume} · ${product.alcohol}`
   card.querySelector('[data-product-name]').textContent = product.name
   card.querySelector('[data-product-notes]').textContent = product.notes.join(' · ')
+  card.querySelector('[data-product-price]').textContent = formatPrice(product.price)
   card.querySelectorAll('[data-product-link]').forEach((link) => {
     link.href = url
     link.setAttribute('aria-label', `Ver ${product.name}`)
@@ -36,9 +39,10 @@ export function renderProductCard(product, options = {}) {
   if (product.badge) badge.textContent = product.badge
   else badge.remove()
   button.dataset.select = product.slug
-  button.classList.toggle('selected', selected)
-  button.querySelector('[data-add-label]').textContent = selected ? 'Agregado' : 'Agregar'
-  button.querySelector('b').textContent = selected ? '' : '+'
+  button.classList.toggle('selected', currentQuantity > 0)
+  button.setAttribute('aria-label', `Agregar una unidad de ${product.name}`)
+  button.querySelector('[data-add-label]').textContent = currentQuantity ? `En carrito: ${currentQuantity}` : 'Agregar'
+  button.querySelector('b').textContent = '+'
 
   const output = document.createElement('div')
   output.append(fragment)
@@ -57,14 +61,4 @@ export function enableProductCardNavigation(container) {
       window.location.href = event.target.dataset.productUrl
     }
   })
-}
-
-export function readSelection() {
-  try { return new Set(JSON.parse(localStorage.getItem('gln-selection') || '[]')) }
-  catch { return new Set() }
-}
-
-export function saveSelection(selection) {
-  localStorage.setItem('gln-selection', JSON.stringify([...selection]))
-  window.dispatchEvent(new Event('gln-selection-change'))
 }

@@ -1,9 +1,10 @@
-﻿import '../../src/global.css'
+import '../../src/global.css'
 import './producto.css'
 import '../../src/components/header/header.js'
 import '../../src/components/footer/footer.js'
 import '../../src/components/product-card/product-card.css?producto'
-import { enableProductCardNavigation, readSelection, renderProductCard, saveSelection } from '../../src/components/product-card/product-card.js'
+import { enableProductCardNavigation, renderProductCard } from '../../src/components/product-card/product-card.js'
+import { changeCartQuantity, formatPrice, readCart } from '../../src/components/cart-drawer/cart-store.js'
 
 const page = document.querySelector('#product-page')
 const pathParts = window.location.pathname.split('/').filter(Boolean)
@@ -16,7 +17,7 @@ function updateMetadata(product) {
   document.querySelector('link[rel="canonical"]').href = `${location.origin}/catalogo/producto/${product.slug}`
   const schema = document.createElement('script')
   schema.type = 'application/ld+json'
-  schema.textContent = JSON.stringify({ '@context':'https://schema.org', '@type':'Product', name:product.name, description:product.description, image:[product.image], brand:{'@type':'Brand',name:product.brand}, category:product.category, countryOfOrigin:product.origin, sku:product.slug })
+  schema.textContent = JSON.stringify({ '@context':'https://schema.org', '@type':'Product', name:product.name, description:product.description, image:[product.image], brand:{'@type':'Brand',name:product.brand}, category:product.category, countryOfOrigin:product.origin, sku:product.slug, offers:{'@type':'Offer',priceCurrency:'PEN',price:product.price} })
   document.head.appendChild(schema)
 }
 
@@ -29,36 +30,46 @@ function relatedProducts(product, products) {
 }
 
 function render(product, products) {
-  const selected = readSelection()
+  let cart = readCart()
   const detail = document.querySelector('#product-detail')
   detail.style.setProperty('--tone', product.color); detail.classList.remove('loading-detail')
   document.querySelectorAll('[data-name]').forEach((element) => { element.textContent = product.name })
   document.querySelector('[data-kicker]').textContent = `${product.category} · ${product.volume}`
   document.querySelector('[data-description]').textContent = product.description
+  document.querySelector('[data-price]').textContent = formatPrice(product.price)
   document.querySelector('[data-notes]').innerHTML = product.notes.map((note) => `<span>${note}</span>`).join('')
   document.querySelector('[data-notes]').insertAdjacentHTML('afterend', `<dl class="specifications"><div><dt>Tipo</dt><dd>${product.subtype}</dd></div><div><dt>Contenido</dt><dd>${product.volume}</dd></div><div><dt>Alcohol</dt><dd>${product.alcohol}</dd></div><div><dt>Origen</dt><dd>${product.origin}</dd></div></dl>`)
   const photo = document.querySelector('[data-photo]'); photo.src = product.image; photo.alt = product.name
   const logo = document.querySelector('[data-logo]'); logo.src = product.logo; logo.alt = product.brand; logo.dataset.brand = product.brand
   const addButton = document.querySelector('[data-add]'); addButton.disabled = false
-  addButton.classList.toggle('selected', selected.has(product.slug)); addButton.textContent = selected.has(product.slug) ? 'Agregado al carrito ✓' : 'Agregar al carrito +'
-  addButton.addEventListener('click', (event) => {
-    selected.has(product.slug) ? selected.delete(product.slug) : selected.add(product.slug)
-    saveSelection(selected)
-    event.currentTarget.classList.toggle('selected', selected.has(product.slug))
-    event.currentTarget.textContent = selected.has(product.slug) ? 'Agregado al carrito ✓' : 'Agregar al carrito +'
-  })
+  const output = document.querySelector('[data-detail-quantity]')
+  const decrease = document.querySelector('[data-detail-decrease]')
+
+  const updateQuantity = () => {
+    const quantity = cart[product.slug] || 0
+    output.textContent = quantity
+    decrease.disabled = quantity === 0
+    addButton.textContent = quantity ? 'Agregar otra unidad +' : 'Agregar al carrito +'
+    addButton.classList.toggle('selected', quantity > 0)
+  }
+  const changeQuantity = (delta) => { cart = changeCartQuantity(product.slug, delta); updateQuantity() }
+  addButton.addEventListener('click', () => changeQuantity(1))
+  document.querySelector('[data-detail-increase]').addEventListener('click', () => changeQuantity(1))
+  decrease.addEventListener('click', () => changeQuantity(-1))
+  window.addEventListener('gln-selection-change', () => { cart = readCart(); updateQuantity() })
+  updateQuantity()
+
   const related = relatedProducts(product, products)
-  page.insertAdjacentHTML('beforeend', `<section class="related"><div class="related-head"><div><p class="tag">Sigue explorando</p><h2>Productos relacionados</h2></div><a href="/catalogo/">Ver todo el catálogo ↗</a></div><div class="product-grid related-grid">${related.map((item,index) => renderProductCard(item,{index,selected:selected.has(item.slug)})).join('')}</div></section>`)
+  page.insertAdjacentHTML('beforeend', `<section class="related"><div class="related-head"><div><p class="tag">Sigue explorando</p><h2>Productos relacionados</h2></div><a href="/catalogo/">Ver todo el catálogo ↗</a></div><div class="product-grid related-grid">${related.map((item,index) => renderProductCard(item,{index,quantity:cart[item.slug] || 0})).join('')}</div></section>`)
   const relatedGrid = page.querySelector('.related-grid')
   enableProductCardNavigation(relatedGrid)
   relatedGrid.addEventListener('click', (event) => {
     const button = event.target.closest('[data-select]')
     if (!button) return
-    selected.has(button.dataset.select) ? selected.delete(button.dataset.select) : selected.add(button.dataset.select)
-    saveSelection(selected)
-    button.classList.toggle('selected', selected.has(button.dataset.select))
-    button.querySelector('[data-add-label]').textContent = selected.has(button.dataset.select) ? 'Agregado' : 'Agregar'
-    button.querySelector('b').textContent = selected.has(button.dataset.select) ? '' : '+'
+    cart = changeCartQuantity(button.dataset.select, 1)
+    const quantity = cart[button.dataset.select] || 0
+    button.classList.toggle('selected', quantity > 0)
+    button.querySelector('[data-add-label]').textContent = `En carrito: ${quantity}`
   })
 }
 
@@ -80,4 +91,3 @@ async function init() {
 }
 
 init()
-

@@ -1,6 +1,7 @@
-﻿import './header.css'
+import './header.css'
 
 import '../cart-drawer/cart-drawer.js'
+import { cartItemCount, readCart } from '../cart-drawer/cart-store.js'
 
 const component = document.querySelector('site-header')
 
@@ -11,13 +12,20 @@ if (component) {
   const explore = component.querySelector('.explore')
   const isCatalogPage = window.location.pathname.startsWith('/catalogo')
   const isAboutPage = window.location.pathname.startsWith('/nosotros')
-  const activePage = isCatalogPage ? 'catalogo' : isAboutPage ? 'nosotros' : 'inicio'
+  const isContactPage = window.location.pathname.startsWith('/contacto')
+  const activePage = isCatalogPage
+    ? 'catalogo'
+    : isAboutPage
+      ? 'nosotros'
+      : isContactPage
+        ? 'contacto'
+        : 'inicio'
 
   component
     .querySelector('[data-page="' + activePage + '"]')
     ?.classList.add('page-active')
 
-  if (isCatalogPage || isAboutPage) {
+  if (isCatalogPage || isAboutPage || isContactPage) {
     header.classList.add('solid')
     explore.href = '#carrito'
   } else {
@@ -29,9 +37,7 @@ if (component) {
   }
 
   const updateCartCount = () => {
-    let selection = []
-    try { selection = JSON.parse(localStorage.getItem('gln-selection') || '[]') } catch {}
-    component.querySelector('[data-cart-count]').textContent = selection.length
+    component.querySelector('[data-cart-count]').textContent = cartItemCount(readCart())
   }
   updateCartCount()
   window.addEventListener('gln-selection-change', updateCartCount)

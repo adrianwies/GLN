@@ -1,24 +1,44 @@
 import './cart-drawer.css'
+import { formatPrice, readCart, setCartQuantity } from './cart-store.js'
 
 const drawer = document.querySelector('[data-cart-drawer]')
+const WHATSAPP_NUMBER = '51908946740'
 
 if (drawer) {
   const backdrop = document.querySelector('[data-cart-backdrop]')
   let products = []
 
-  const readSelection = () => {
-    try { return JSON.parse(localStorage.getItem('gln-selection') || '[]') }
-    catch { return [] }
-  }
-
   const render = () => {
-    const selectedSlugs = readSelection()
-    const selected = products.filter((product) => selectedSlugs.includes(product.slug))
-    drawer.querySelector('[data-cart-list]').innerHTML = selected.map((product) => `<article><img src="${product.image}" alt="${product.name}" /><div><small>${product.category} · ${product.volume}</small><h3>${product.name}</h3></div><button data-cart-remove="${product.slug}" aria-label="Quitar ${product.name}">×</button></article>`).join('')
+    const cart = readCart()
+    const selected = products.map((product) => ({ product, quantity: cart[product.slug] || 0 })).filter(({ quantity }) => quantity > 0)
+    const total = selected.reduce((sum, { product, quantity }) => sum + Number(product.price || 0) * quantity, 0)
+
+    drawer.querySelector('[data-cart-list]').innerHTML = selected.map(({ product, quantity }) => {
+      const subtotal = Number(product.price || 0) * quantity
+      return `<article>
+        <img src="${product.image}" alt="${product.name}" />
+        <div class="cart-item-copy"><small>${product.category} · ${product.volume}</small><h3>${product.name}</h3><span>${formatPrice(product.price)} c/u</span>
+          <div class="cart-quantity" aria-label="Cantidad de ${product.name}"><button data-cart-decrease="${product.slug}" type="button" aria-label="Reducir ${product.name}">−</button><output>${quantity}</output><button data-cart-increase="${product.slug}" type="button" aria-label="Aumentar ${product.name}">+</button></div>
+        </div>
+        <div class="cart-item-end"><strong>${formatPrice(subtotal)}</strong><button class="cart-remove" data-cart-remove="${product.slug}" type="button" aria-label="Quitar ${product.name}">×</button></div>
+      </article>`
+    }).join('')
+
     drawer.querySelector('[data-cart-empty]').hidden = Boolean(selected.length)
+    const totalBox = drawer.querySelector('[data-cart-total]')
+    totalBox.hidden = !selected.length
+    drawer.querySelector('[data-cart-total-value]').textContent = formatPrice(total)
     const action = drawer.querySelector('[data-cart-action]')
     action.classList.toggle('disabled', !selected.length)
-    action.href = selected.length ? `/?productos=${encodeURIComponent(selected.map((product) => product.name).join(', '))}#contacto` : '/catalogo/'
+    if (selected.length) {
+      const lines = selected.map(({ product, quantity }) => `• ${quantity} × ${product.name} — ${formatPrice(Number(product.price) * quantity)}`)
+      const message = ['Hola GLN, quiero realizar este pedido:', '', ...lines, '', `Total: ${formatPrice(total)}`].join('\n')
+      action.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+      action.target = '_blank'
+    } else {
+      action.href = '/catalogo/'
+      action.removeAttribute('target')
+    }
   }
 
   const open = (show) => {
@@ -34,12 +54,12 @@ if (drawer) {
   drawer.querySelector('[data-cart-close]').addEventListener('click', () => open(false))
   backdrop.addEventListener('click', () => open(false))
   drawer.addEventListener('click', (event) => {
-    const button = event.target.closest('[data-cart-remove]')
-    if (!button) return
-    const selection = readSelection().filter((slug) => slug !== button.dataset.cartRemove)
-    localStorage.setItem('gln-selection', JSON.stringify(selection))
-    window.dispatchEvent(new Event('gln-selection-change'))
-    render()
+    const increase = event.target.closest('[data-cart-increase]')
+    const decrease = event.target.closest('[data-cart-decrease]')
+    const remove = event.target.closest('[data-cart-remove]')
+    if (increase) setCartQuantity(increase.dataset.cartIncrease, (readCart()[increase.dataset.cartIncrease] || 0) + 1)
+    else if (decrease) setCartQuantity(decrease.dataset.cartDecrease, (readCart()[decrease.dataset.cartDecrease] || 0) - 1)
+    else if (remove) setCartQuantity(remove.dataset.cartRemove, 0)
   })
   window.addEventListener('gln-selection-change', render)
   window.addEventListener('storage', render)

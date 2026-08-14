@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contacta a Grupo de Licores Nacionales para compras, distribución e información comercial." />
+    <meta name="theme-color" content="#092938" />
+    <link rel="icon" type="image/png" href="/images/gln-icon.png" />
+    <title>Contacto | GLN</title>
+  </head>
+  <body>
+    <!-- HEADER_COMPONENT -->
+    <main>
+      <section class="contact-hero">
+        <div class="contact-hero-copy reveal">
+          <p class="tag">Hablemos</p>
+          <h1>Tu próximo brindis<br /><em>empieza aquí.</em></h1>
+          <p>Cuéntanos qué necesitas. Nuestro equipo está listo para ayudarte con compras, distribución e información comercial.</p>
+        </div>
+        <div class="contact-hero-mark" aria-hidden="true"><img src="/images/gln-icon.png" alt="" /></div>
+      </section>
+
+      <section class="contact-content">
+        <div class="contact-intro reveal">
+          <p class="eyebrow">Atención personalizada</p>
+          <h2>Conversemos sobre<br /><em>tu próxima oportunidad.</em></h2>
+          <p>Déjanos tus datos y nos pondremos en contacto contigo. También puedes comunicarte directamente por teléfono, correo o WhatsApp.</p>
+          <div class="contact-direct">
+            <a href="tel:+51908946740"><span>Teléfono</span>+51 908 946 740</a>
+            <a href="mailto:ventas@gln.com.pe"><span>Correo</span>ventas@gln.com.pe</a>
+            <p><span>Horario</span>Lunes a sábado · 9:00 a. m. – 7:00 p. m.</p>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" data-contact-form>
+          <label>Nombre completo<input required name="nombre" autocomplete="name" placeholder="Tu nombre" /></label>
+          <label>Correo electrónico<input required name="correo" type="email" autocomplete="email" placeholder="correo@ejemplo.com" /></label>
+          <label>Estoy interesado en<select name="interes"><option>Comprar productos</option><option>Ser distribuidor</option><option>Información comercial</option></select></label>
+          <label>Mensaje<textarea name="mensaje" placeholder="Cuéntanos cómo podemos ayudarte"></textarea></label>
+          <button type="submit">Enviar consulta <b>↗</b></button>
+          <output aria-live="polite"></output>
+        </form>
+      </section>
+    </main>
+    <!-- FOOTER_COMPONENT -->
+    <!-- CART_COMPONENT -->
+    <script type="module" src="/contacto/contacto.js"></script>
+  </body>
+</html>

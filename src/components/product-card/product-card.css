@@ -290,3 +290,5 @@
     .product-meta { padding-right: 104px }
     .add-button { right: 6px }
 }
+
+.product-price{display:block;margin-top:8px;color:var(--color-primary);font-size:.86rem;font-weight:600}.add-button.selected b::before{content:none}

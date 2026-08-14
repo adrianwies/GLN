@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'vite'
+import { defineConfig } from 'vite'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
@@ -36,6 +36,7 @@ export default defineConfig({
         catalogo: resolve(import.meta.dirname, 'catalogo/index.html'),
         producto: resolve(import.meta.dirname, 'catalogo/producto/index.html'),
         nosotros: resolve(import.meta.dirname, 'nosotros/index.html'),
+        contacto: resolve(import.meta.dirname, 'contacto/index.html'),
       },
     },
   },

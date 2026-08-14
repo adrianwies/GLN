@@ -3,7 +3,8 @@ import './catalogo.css'
 import '../src/components/header/header.js'
 import '../src/components/footer/footer.js'
 import '../src/components/product-card/product-card.css?catalogo'
-import { enableProductCardNavigation, readSelection, renderProductCard, saveSelection } from '../src/components/product-card/product-card.js'
+import { enableProductCardNavigation, renderProductCard } from '../src/components/product-card/product-card.js'
+import { changeCartQuantity, readCart } from '../src/components/cart-drawer/cart-store.js'
 
 const state = {
   products: [],
@@ -11,7 +12,7 @@ const state = {
   brand: '',
   query: '',
   sort: 'featured',
-  selection: readSelection(),
+  cart: readCart(),
 }
 
 const $ = (selector) => document.querySelector(selector)
@@ -38,7 +39,7 @@ function filteredProducts() {
 
 function render() {
   const products = filteredProducts()
-  grid.innerHTML = products.map((product,index) => renderProductCard(product,{index,selected:state.selection.has(product.slug)})).join('')
+  grid.innerHTML = products.map((product,index) => renderProductCard(product,{index,quantity:state.cart[product.slug] || 0})).join('')
   grid.hidden = !products.length
   empty.hidden = Boolean(products.length)
   $('#results-count').textContent = `${products.length} ${products.length === 1 ? 'producto' : 'productos'}`
@@ -54,7 +55,7 @@ function resetFilters() {
 
 document.addEventListener('click', (event) => {
   const select = event.target.closest('[data-select]')
-  if (select) { state.selection.has(select.dataset.select) ? state.selection.delete(select.dataset.select) : state.selection.add(select.dataset.select); saveSelection(state.selection) }
+  if (select) { state.cart = changeCartQuantity(select.dataset.select, 1); render() }
 })
 
 enableProductCardNavigation(grid)
@@ -65,7 +66,7 @@ $('#category-filter').addEventListener('change', (event) => { state.category = e
 $('#sort').addEventListener('change', (event) => { state.sort = event.target.value; render() })
 $('#clear-filters').addEventListener('click', resetFilters)
 $('#empty-state button').addEventListener('click', resetFilters)
-window.addEventListener('gln-selection-change', () => { state.selection = readSelection(); render() })
+window.addEventListener('gln-selection-change', () => { state.cart = readCart(); render() })
 
 async function init() {
   try {

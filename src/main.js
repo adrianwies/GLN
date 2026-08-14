@@ -1,4 +1,4 @@
-﻿import './global.css'
+import './global.css'
 import './style.css'
 import './product-showcase.css'
 import './components/header/header.js'
@@ -13,18 +13,10 @@ const observer = new IntersectionObserver(
   { threshold: 0.1 },
 )
 
-const form = document.querySelector('form')
-
 document.querySelectorAll('.reveal').forEach((element) => {
   observer.observe(element)
 })
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault()
-  form.querySelector('output').textContent =
-    'Gracias. Recibimos tu consulta y te contactaremos pronto.'
-  form.reset()
-})
 
 
 
