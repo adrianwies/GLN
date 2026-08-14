@@ -11,6 +11,7 @@ if (drawer) {
   const render = () => {
     const cart = readCart()
     const selected = products.map((product) => ({ product, quantity: cart[product.slug] || 0 })).filter(({ quantity }) => quantity > 0)
+    const totalUnits = selected.reduce((sum, { quantity }) => sum + quantity, 0)
     const total = selected.reduce((sum, { product, quantity }) => sum + Number(product.price || 0) * quantity, 0)
 
     drawer.querySelector('[data-cart-list]').innerHTML = selected.map(({ product, quantity }) => {
@@ -25,14 +26,34 @@ if (drawer) {
     }).join('')
 
     drawer.querySelector('[data-cart-empty]').hidden = Boolean(selected.length)
+    const summary = drawer.querySelector('[data-cart-summary]')
+    summary.hidden = !selected.length
+    drawer.querySelector('[data-cart-units]').textContent = totalUnits
+    drawer.querySelector('[data-cart-products]').textContent = selected.length
     const totalBox = drawer.querySelector('[data-cart-total]')
     totalBox.hidden = !selected.length
     drawer.querySelector('[data-cart-total-value]').textContent = formatPrice(total)
     const action = drawer.querySelector('[data-cart-action]')
     action.classList.toggle('disabled', !selected.length)
     if (selected.length) {
-      const lines = selected.map(({ product, quantity }) => `• ${quantity} × ${product.name} — ${formatPrice(Number(product.price) * quantity)}`)
-      const message = ['Hola GLN, quiero realizar este pedido:', '', ...lines, '', `Total: ${formatPrice(total)}`].join('\n')
+      const lines = selected.flatMap(({ product, quantity }, index) => [
+        `${index + 1}. ${product.name}`,
+        `   Cantidad: ${quantity}`,
+        `   Precio unitario: ${formatPrice(product.price)}`,
+        `   Subtotal: ${formatPrice(Number(product.price) * quantity)}`,
+        '',
+      ])
+      const message = [
+        'Hola GLN 👋',
+        'Quiero realizar el siguiente pedido:',
+        '',
+        ...lines,
+        'RESUMEN DEL PEDIDO',
+        `Total de unidades: ${totalUnits}`,
+        `Total a pagar: ${formatPrice(total)}`,
+        '',
+        'Quedo atento a la confirmación. Gracias.',
+      ].join('\n')
       action.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
       action.target = '_blank'
     } else {
