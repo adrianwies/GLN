@@ -11,6 +11,18 @@ if (component) {
   const menu = component.querySelector('.menu')
   const explore = component.querySelector('.explore')
 
+  // En móvil, el menú vive fuera del header para que position: fixed no quede
+  // condicionado por las animaciones o filtros del encabezado en producción.
+  const syncNavPlacement = () => {
+    if (window.innerWidth <= 850) {
+      if (nav.parentElement !== component) component.append(nav)
+    } else if (nav.parentElement !== header) {
+      header.insertBefore(nav, explore)
+    }
+  }
+
+  syncNavPlacement()
+
   // Evita mostrar el logo, navegación y carrito antes de cargar sus estilos.
   component.removeAttribute('style')
   component.classList.add('is-ready')
@@ -74,5 +86,6 @@ if (component) {
 
   window.addEventListener('resize', () => {
     if (window.innerWidth > 850 && nav.classList.contains('open')) setMenuOpen(false)
+    syncNavPlacement()
   })
 }
