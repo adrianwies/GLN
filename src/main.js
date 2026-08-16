@@ -27,13 +27,20 @@ const carouselDots = document.querySelectorAll('.carousel-dots button')
 let dragging = false
 let dragStartX = 0
 let initialScroll = 0
+let activePointerId = null
 
 productCarousel.scrollLeft = 0
 
-const carouselEnd = () =>
-  productCarousel.querySelector('.card').offsetWidth
+const carouselStep = () => {
+  const card = productCarousel.querySelector('.card')
+  const styles = getComputedStyle(productCarousel)
+  return card.offsetWidth + (Number.parseFloat(styles.columnGap || styles.gap) || 0)
+}
+
+const carouselEnd = () => productCarousel.scrollWidth - productCarousel.clientWidth
 const updateCarouselDots = () => {
-  const isAtEnd = productCarousel.scrollLeft >= carouselEnd() / 2
+  const end = carouselEnd()
+  const isAtEnd = end > 0 && productCarousel.scrollLeft >= end / 2
   productCarousel.classList.toggle('show-end', isAtEnd)
   carouselDots.forEach((dot, index) => {
     dot.classList.toggle('active', index === Number(isAtEnd))
@@ -42,7 +49,9 @@ const updateCarouselDots = () => {
 
 
 productCarousel.addEventListener('pointerdown', (event) => {
+  if (event.pointerType !== 'mouse') return
   dragging = true
+  activePointerId = event.pointerId
   dragStartX = event.clientX
   initialScroll = productCarousel.scrollLeft
   productCarousel.setPointerCapture(event.pointerId)
@@ -54,11 +63,23 @@ productCarousel.addEventListener('pointermove', (event) => {
 })
 
 productCarousel.addEventListener('pointerup', (event) => {
+  if (!dragging || event.pointerId !== activePointerId) return
   dragging = false
-  productCarousel.releasePointerCapture(event.pointerId)
-  const destination =
-    productCarousel.scrollLeft >= carouselEnd() / 2 ? carouselEnd() : 0
+  activePointerId = null
+  if (productCarousel.hasPointerCapture(event.pointerId)) {
+    productCarousel.releasePointerCapture(event.pointerId)
+  }
+  const step = carouselStep()
+  const destination = Math.min(
+    carouselEnd(),
+    Math.max(0, Math.round(productCarousel.scrollLeft / step) * step),
+  )
   productCarousel.scrollTo({ left: destination, behavior: 'smooth' })
+})
+
+productCarousel.addEventListener('pointercancel', () => {
+  dragging = false
+  activePointerId = null
 })
 
 
@@ -87,11 +108,9 @@ const previousProductButton = document.querySelector('.carousel-arrow--prev')
 const nextProductButton = document.querySelector('.carousel-arrow--next')
 
 const toggleProductView = (direction) => {
-  const isAtEnd = productCarousel.scrollLeft >= carouselEnd() / 2
-  const goToEnd = direction > 0 ? !isAtEnd : !isAtEnd
-
+  const destination = direction > 0 ? carouselEnd() : 0
   productCarousel.scrollTo({
-    left: goToEnd ? carouselEnd() : 0,
+    left: destination,
     behavior: 'smooth',
   })
 }

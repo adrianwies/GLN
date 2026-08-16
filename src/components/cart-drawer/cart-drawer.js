@@ -8,6 +8,10 @@ if (drawer) {
   const backdrop = document.querySelector('[data-cart-backdrop]')
   let products = []
 
+  // Evita que el carrito aparezca abierto mientras cargan los estilos del componente.
+  drawer.removeAttribute('style')
+  drawer.classList.add('is-ready')
+
   const render = () => {
     const cart = readCart()
     const selected = products.map((product) => ({ product, quantity: cart[product.slug] || 0 })).filter(({ quantity }) => quantity > 0)

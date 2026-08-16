@@ -149,18 +149,7 @@ body .products .product-carousel > article.card .info {
   background: var(--color-accent);
 }
 
-@media (max-width: 850px) {
-  body .products .product-carousel > article.card {
-    flex-basis: 82vw !important;
-    width: 82vw !important;
-    min-width: 82vw !important;
-    max-width: 82vw !important;
-  }
 
-  body .products .product-carousel > article.card .pic {
-    height: 340px;
-  }
-}
 
 /* Unión estable entre Mr. Jigger y Bandolero */
 body .products .product-carousel.show-end > article.card:nth-child(4) .pic::after {
@@ -282,21 +271,7 @@ body .products .product-carousel.show-end > article.card:nth-child(5) .pic::afte
   transform: translateY(-50%) scale(.94);
 }
 
-@media (max-width: 850px) {
-  .carousel-arrow {
-    top: 170px;
-    width: 38px;
-    height: 38px;
-  }
 
-  .carousel-arrow--prev {
-    left: 7px;
-  }
-
-  .carousel-arrow--next {
-    right: 7px;
-  }
-}
 
 /* Información alineada con la geometría diagonal */
 body .products .product-carousel > article.card .info {
@@ -344,15 +319,7 @@ body .products .product-carousel > article.card .info span {
   line-height: 1.4;
 }
 
-@media (max-width: 850px) {
-  body .products .product-carousel > article.card .info {
-    padding-left: 42px;
-  }
 
-  body .products .product-carousel > article.card:first-child .info {
-    padding-left: 16px;
-  }
-}
 
 /* Línea limitada al ancho exacto del título */
 body .products .product-carousel > article.card .info::after {
@@ -482,6 +449,11 @@ body .products .product-carousel > article.card:hover .pic img {
 /* Menos espacio antes de Nuestra seleccion */
 .products.pad {
   padding-top: clamp(1.5rem, 2.5vw, 2.25rem);
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-left: clamp(1.5rem, 3vw, 3.5rem);
+  padding-right: clamp(1.5rem, 3vw, 3.5rem);
 }
 
 /* Menos separacion entre el titulo y las imagenes */
@@ -489,11 +461,18 @@ body .products .product-carousel > article.card:hover .pic img {
   margin-bottom: 20px;
 }
 
+.products .title h2 {
+  margin: 16px 0 0;
+  line-height: .98;
+}
+
 /* La seleccion completa se adapta al alto visible sin alterar las diagonales */
 @media (min-width: 851px) {
   .products.pad {
-    min-height: calc(100svh - var(--header-height));
-    padding-bottom: clamp(1rem, 2vh, 1.5rem);
+    min-height: auto;
+    padding-left: var(--space-page);
+    padding-right: var(--space-page);
+    padding-bottom: clamp(2rem, 3vw, 3.25rem);
   }
 
   body .products .product-carousel > article.card .pic {
@@ -544,10 +523,99 @@ body .products .product-carousel > article.card:first-child .info span {
   }
 }
 
-@media (max-width:850px) {
-  .products .carousel-arrow { top:170px }
-}
+
 
 
 /* RESPONSIVE SHOWCASE 2026 */
-@media(max-width:1100px) and (min-width:851px){body .products .product-carousel>article.card{flex-basis:33.333%!important;width:33.333%!important;min-width:33.333%!important;max-width:33.333%!important}}@media(max-width:850px){body .products .product-carousel>article.card,body .products .product-carousel.show-end>article.card:nth-child(4),body .products .product-carousel.show-end>article.card:nth-child(5){flex-basis:min(82vw,520px)!important;width:min(82vw,520px)!important;min-width:min(82vw,520px)!important;max-width:min(82vw,520px)!important}body .products .product-carousel>article.card .pic{height:clamp(300px,62vw,390px)}body .products .product-carousel>article.card:nth-child(n) .info{transform:none}}@media(max-width:480px){body .products .product-carousel>article.card,body .products .product-carousel.show-end>article.card:nth-child(4),body .products .product-carousel.show-end>article.card:nth-child(5){flex-basis:88vw!important;width:88vw!important;min-width:88vw!important;max-width:88vw!important}body .products .product-carousel>article.card .pic{height:300px}.carousel-arrow{width:36px;height:36px;top:150px}}
+@media(min-width:1600px){.products.pad{padding-top:1.5rem;padding-left:max(var(--space-page),calc((100vw - var(--content-max))/2));padding-right:max(var(--space-page),calc((100vw - var(--content-max))/2));padding-bottom:2.5rem}.products .title{margin-bottom:18px}.products .title h2{margin-top:14px}body .products .product-carousel>article.card{flex-basis:25%!important;width:25%!important;min-width:25%!important;max-width:25%!important}body .products .product-carousel>article.card .pic{height:clamp(340px,21vw,400px)}}
+@media(max-width:1100px) and (min-width:851px){body .products .product-carousel>article.card{flex-basis:33.333%!important;width:33.333%!important;min-width:33.333%!important;max-width:33.333%!important}}
+@media(max-width:850px){.products.pad{padding-left:24px;padding-right:24px}.products .carousel-stage{overflow:hidden}.products .product-carousel{gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:0}.products .carousel-arrow{display:none}body .products .product-carousel>article.card,body .products .product-carousel.show-end>article.card:nth-child(4),body .products .product-carousel.show-end>article.card:nth-child(5){flex:0 0 calc((100% - 12px)/2)!important;width:calc((100% - 12px)/2)!important;min-width:calc((100% - 12px)/2)!important;max-width:calc((100% - 12px)/2)!important;scroll-snap-align:start}body .products .product-carousel>article.card .pic{height:clamp(230px,48vw,330px)}body .products .product-carousel>article.card:nth-child(n) .info{min-height:108px!important;padding:12px 2px!important;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:4px;transform:none}body .products .product-carousel>article.card .info h3{min-height:0;font-size:clamp(.95rem,3vw,1.15rem);line-height:1.2;overflow-wrap:normal;word-break:normal}body .products .product-carousel>article.card .info span{margin-top:4px!important;line-height:1.45;overflow-wrap:normal;word-break:normal}}
+@media(max-width:520px){.products.pad{padding-left:20px;padding-right:20px}.products .product-carousel{gap:10px}body .products .product-carousel>article.card,body .products .product-carousel.show-end>article.card:nth-child(4),body .products .product-carousel.show-end>article.card:nth-child(5){flex-basis:calc((100% - 10px)/2)!important;width:calc((100% - 10px)/2)!important;min-width:calc((100% - 10px)/2)!important;max-width:calc((100% - 10px)/2)!important}body .products .product-carousel>article.card .pic{height:clamp(210px,62vw,285px)}body .products .product-carousel>article.card .info{min-height:104px!important}body .products .product-carousel>article.card .info h3{font-size:.95rem}body .products .product-carousel>article.card .info small,body .products .product-carousel>article.card .info span{font-size:.5rem;letter-spacing:.08em}}
+
+/* Regla definitiva: dos tarjetas visibles y el resto mediante desplazamiento. */
+@media(max-width:850px){
+  body .products .carousel-stage .product-carousel{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    overflow-x:auto!important;
+    gap:12px!important;
+    scroll-snap-type:x mandatory;
+    touch-action:pan-x;
+    overscroll-behavior-inline:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n),
+  body .products .carousel-stage .product-carousel.show-end>article.card:nth-child(n){
+    display:block!important;
+    flex:0 0 calc((100% - 12px)/2)!important;
+    width:calc((100% - 12px)/2)!important;
+    min-width:calc((100% - 12px)/2)!important;
+    max-width:calc((100% - 12px)/2)!important;
+    margin:0!important;
+    transform:none!important;
+    scroll-snap-align:start;
+  }
+}
+
+@media(max-width:520px){
+  body .products .carousel-stage .product-carousel{gap:10px!important}
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n),
+  body .products .carousel-stage .product-carousel.show-end>article.card:nth-child(n){
+    flex-basis:calc((100% - 10px)/2)!important;
+    width:calc((100% - 10px)/2)!important;
+    min-width:calc((100% - 10px)/2)!important;
+    max-width:calc((100% - 10px)/2)!important;
+  }
+}
+
+/* Diagonales más sutiles cuando las tarjetas pasan a dos columnas. */
+@media(max-width:850px){
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n) .pic{
+    width:calc(100% + 14px)!important;
+    clip-path:polygon(0 0,calc(100% - 14px) 0,100% 100%,14px 100%)!important;
+  }
+  body .products .carousel-stage .product-carousel>article.card:first-child .pic{
+    clip-path:polygon(0 0,calc(100% - 14px) 0,100% 100%,0 100%)!important;
+  }
+  body .products .carousel-stage .product-carousel>article.card:last-child .pic{
+    clip-path:polygon(0 0,calc(100% - 14px) 0,calc(100% - 14px) 100%,14px 100%)!important;
+  }
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n) .pic::after{
+    display:block!important;
+    clip-path:polygon(calc(100% - 16px) 0,calc(100% - 14px) 0,100% 100%,calc(100% - 2px) 100%)!important;
+  }
+  body .products .carousel-stage .product-carousel>article.card:last-child .pic::after{
+    display:none!important;
+  }
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n) .info{
+    align-items:center!important;
+    justify-content:flex-start!important;
+    text-align:center!important;
+  }
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n) .info>div,
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n) .info small,
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n) .info h3,
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n) .info span{
+    width:100%;
+    text-align:center!important;
+  }
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n) .info h3{
+    display:block;
+  }
+}
+
+@media(max-width:520px){
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n) .pic{
+    width:calc(100% + 10px)!important;
+    clip-path:polygon(0 0,calc(100% - 10px) 0,100% 100%,10px 100%)!important;
+  }
+  body .products .carousel-stage .product-carousel>article.card:first-child .pic{
+    clip-path:polygon(0 0,calc(100% - 10px) 0,100% 100%,0 100%)!important;
+  }
+  body .products .carousel-stage .product-carousel>article.card:last-child .pic{
+    clip-path:polygon(0 0,calc(100% - 10px) 0,calc(100% - 10px) 100%,10px 100%)!important;
+  }
+  body .products .carousel-stage .product-carousel>article.card:nth-child(n) .pic::after{
+    clip-path:polygon(calc(100% - 12px) 0,calc(100% - 10px) 0,100% 100%,calc(100% - 2px) 100%)!important;
+  }
+}

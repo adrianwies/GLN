@@ -1,9 +1,9 @@
-<site-header>
+<site-header style="visibility:hidden">
   <header>
     <a class="logo" href="/">
       <img src="/images/LogoGLN.png" alt="Grupo de Licores Nacionales" />
     </a>
-    <nav aria-label="Navegación principal">
+    <nav id="main-navigation" aria-label="Navegación principal">
       <a data-page="inicio" href="/">Inicio</a>
       <a data-page="catalogo" href="/catalogo/">Catálogo</a>
       <a data-page="nosotros" href="/nosotros/">Nosotros</a>
@@ -15,6 +15,8 @@
         <strong data-cart-count>0</strong>
       </span>
     </a>
-    <button class="menu" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <button class="menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-navigation">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 </site-header>

@@ -10,6 +10,10 @@ if (component) {
   const nav = component.querySelector('nav')
   const menu = component.querySelector('.menu')
   const explore = component.querySelector('.explore')
+
+  // Evita mostrar el logo, navegación y carrito antes de cargar sus estilos.
+  component.removeAttribute('style')
+  component.classList.add('is-ready')
   const isCatalogPage = window.location.pathname.startsWith('/catalogo')
   const isAboutPage = window.location.pathname.startsWith('/nosotros')
   const isContactPage = window.location.pathname.startsWith('/contacto')
@@ -43,15 +47,32 @@ if (component) {
   window.addEventListener('gln-selection-change', updateCartCount)
   window.addEventListener('storage', updateCartCount)
 
-  menu.addEventListener('click', () => {
-    const open = nav.classList.toggle('open')
+  const setMenuOpen = (open) => {
+    nav.classList.toggle('open', open)
+    menu.classList.toggle('open', open)
     menu.setAttribute('aria-expanded', String(open))
+    menu.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú')
+    document.body.classList.toggle('menu-open', open)
+  }
+
+  menu.addEventListener('click', () => {
+    setMenuOpen(!nav.classList.contains('open'))
   })
 
   nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      nav.classList.remove('open')
-      menu.setAttribute('aria-expanded', 'false')
+      setMenuOpen(false)
     })
+  })
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && nav.classList.contains('open')) {
+      setMenuOpen(false)
+      menu.focus()
+    }
+  })
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 850 && nav.classList.contains('open')) setMenuOpen(false)
   })
 }
