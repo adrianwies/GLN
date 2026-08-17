@@ -23,6 +23,14 @@
   gap:7vw;
   background:#031c29;
 }
+.contact-hero:before{
+  content:'';
+  position:absolute;
+  z-index:0;
+  inset:0;
+  background:linear-gradient(90deg,#031c29e8 0%,#031c29b8 48%,#031c2952 100%),linear-gradient(0deg,#031c29b8 0%,transparent 58%);
+  pointer-events:none;
+}
 .contact-hero:after{
   content:"";
   z-index:0;
@@ -80,6 +88,21 @@
 
 
 /* RESPONSIVE CONTACTO 2026 */
-@media(min-width:1600px){.contact-hero{height:430px;min-height:430px;padding-inline:max(var(--space-page),calc((100vw - var(--content-max))/2))}.contact-content{max-width:var(--content-max);padding-inline:0}}
+/* Misma altura física que catalog-hero a 1920 px. */
+@media(min-width:1600px){.contact-hero{height:480px;min-height:480px;max-height:480px;padding-inline:max(var(--space-page),calc((100vw - var(--content-max))/2))}.contact-content{max-width:var(--content-max);padding-inline:0}}
 @media(max-width:850px){.contact-hero{height:auto;min-height:390px;grid-template-columns:1fr;padding:calc(var(--header-height) + 38px) 24px 58px}.contact-hero-copy{max-width:680px}.contact-content{grid-template-columns:1fr;gap:36px;padding:3.5rem 24px}.contact-intro{max-width:680px}.contact-form{height:auto}}
 @media(max-width:560px){.contact-hero{min-height:360px;padding:calc(var(--header-height) + 28px) 20px 48px}.contact-hero h1{font-size:clamp(2.55rem,12vw,3.5rem)}.contact-content{padding:3rem 20px}.section-number{margin-bottom:30px}.contact-form{grid-template-columns:1fr;gap:22px;padding:28px 20px}.contact-form label{grid-column:1/-1}.contact-direct a,.contact-direct p{grid-template-columns:1fr;gap:5px}}
+
+/* Selector de interés personalizado: opciones consistentes con la temática GLN. */
+.contact-form label:has(.contact-select){position:relative}
+.contact-form .contact-select__native{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.contact-select{position:relative;margin-top:2px}
+.contact-form .contact-select__trigger{display:flex;width:100%;align-items:center;justify-content:space-between;gap:14px;padding:15px 0;border:0;border-bottom:1px solid #12374845;border-radius:0;background:transparent;color:var(--color-text);font:inherit;letter-spacing:0;text-align:left;text-transform:none;cursor:pointer}
+.contact-form .contact-select__trigger:hover,.contact-form .contact-select__trigger:focus-visible{background:transparent;color:var(--color-text)}
+.contact-select__trigger i{width:7px;height:7px;margin-right:3px;border-right:1.5px solid var(--color-text);border-bottom:1.5px solid var(--color-text);transform:rotate(45deg) translateY(-2px)}
+.contact-select:focus-within .contact-select__trigger{border-bottom-color:var(--color-accent)}
+.contact-select__menu{position:absolute;z-index:15;top:calc(100% + 8px);left:0;display:none;width:100%;padding:6px;background:var(--color-surface);border:1px solid var(--color-line);box-shadow:0 14px 30px color-mix(in srgb,var(--color-primary-dark) 18%,transparent)}
+.contact-select.open .contact-select__menu{display:grid}
+.contact-select__menu button{width:100%;padding:11px 12px;border:0;background:transparent;color:var(--color-text);font:400 var(--text-sm)/1.35 var(--font-sans);letter-spacing:0;text-align:left;text-transform:none;cursor:pointer}
+.contact-select__menu button:hover,.contact-select__menu button:focus-visible{background:var(--color-surface-alt);color:var(--color-primary);outline:0}
+.contact-select__menu button[aria-selected="true"]{background:var(--color-primary);color:var(--color-white)}

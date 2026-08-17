@@ -67,12 +67,32 @@ body{overflow-x:hidden}.catalog-hero{min-height:620px;padding:calc(var(--header-
 
 .empty-state>img{display:block;width:92px;height:92px;object-fit:contain;margin:0 auto 14px;opacity:.28;filter:grayscale(1)}
 
+/* Opciones de los filtros con la paleta global, sin alterar los controles cerrados. */
+.catalog-tools select option{background:var(--color-surface);color:var(--color-text);font-family:var(--font-sans);font-size:var(--text-body)}
+.catalog-tools select option:checked{background:var(--color-primary);color:var(--color-white)}
+
+/* Menús personalizados: las opciones dejan de depender del estilo del navegador. */
+.catalog-tools .catalog-select__native{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.catalog-select{position:relative}
+.catalog-select__trigger{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;padding:4px 0 0;border:0;background:transparent;color:var(--color-text);font:inherit;text-align:left;cursor:pointer}
+.catalog-select__trigger i{width:7px;height:7px;margin-right:2px;border-right:1.5px solid var(--color-text);border-bottom:1.5px solid var(--color-text);font-size:0;font-style:normal;line-height:1;transform:rotate(45deg) translateY(-2px)}
+.catalog-select__menu{position:absolute;z-index:20;top:calc(100% + 12px);left:-11px;display:none;width:calc(100% + 22px);min-width:190px;padding:6px;background:var(--color-surface);border:1px solid var(--color-line);box-shadow:0 14px 30px color-mix(in srgb,var(--color-primary-dark) 18%,transparent)}
+.catalog-select.open .catalog-select__menu{display:grid}
+.catalog-select__menu button{width:100%;padding:10px 11px;border:0;background:transparent;color:var(--color-text);font:400 var(--text-sm)/1.35 var(--font-sans);text-align:left;cursor:pointer;transition:background .18s ease,color .18s ease}
+.catalog-select__menu button:hover,.catalog-select__menu button:focus-visible{background:var(--color-surface-alt);color:var(--color-primary);outline:0}
+.catalog-select__menu button[aria-selected="true"]{background:var(--color-primary);color:var(--color-white)}
+
+/* La barra de filtros permanece disponible mientras se recorre el catálogo. */
+.catalog-tools{position:relative;z-index:10}
+.catalog-tools--fixed{position:fixed;top:calc(var(--header-height) + 10px);box-shadow:0 8px 18px color-mix(in srgb,var(--color-primary-dark) 9%,transparent)}
+
 
 /* RESPONSIVE CATALOGO 2026 */
 .catalog-shell{width:100%;max-width:none;margin-inline:0}
 .product-grid{align-items:stretch}.product-grid .product-card{display:flex;height:100%;flex-direction:column}.product-grid .product-meta{flex:1}
 @media(min-width:1441px){.catalog-shell{padding-left:var(--space-page);padding-right:var(--space-page)}}
-@media(min-width:1600px){.catalog-hero,.catalog-shell{padding-left:max(var(--space-page),calc((100vw - var(--content-max))/2));padding-right:max(var(--space-page),calc((100vw - var(--content-max))/2))}.catalog-hero{min-height:430px}body .catalog-shell .product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}body .catalog-shell .product-visual{height:350px;flex-basis:350px}}
+/* Los banners internos comparten una altura física a partir de 1920 px. */
+@media(min-width:1600px){.catalog-hero,.catalog-shell{padding-left:max(var(--space-page),calc((100vw - var(--content-max))/2));padding-right:max(var(--space-page),calc((100vw - var(--content-max))/2))}.catalog-hero{height:480px;min-height:480px;max-height:480px}body .catalog-shell .product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}body .catalog-shell .product-visual{height:350px;flex-basis:350px}}
 @media(max-width:1100px){.catalog-hero{grid-template-columns:1fr;padding-top:108px}.catalog-heading{grid-template-columns:1fr .8fr}.catalog-tools{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-tools .search{grid-column:1/-1}.clear-button{min-height:48px}body .catalog-shell .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:850px){.catalog-hero{min-height:430px;padding:calc(var(--header-height) + 25px) 24px 165px}.brand-stream{top:auto;bottom:8px;width:100%;height:145px}.catalog-shell{padding:36px 24px 58px}.catalog-heading{grid-template-columns:1fr;gap:10px}.catalog-heading>p{max-width:620px}body .catalog-shell .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px}body .catalog-shell .product-visual{height:clamp(310px,48vw,390px);flex-basis:clamp(310px,48vw,390px)}}
 @media(max-width:650px){.catalog-hero{min-height:390px;padding:calc(var(--header-height) + 22px) 20px 140px}.catalog-hero h1{font-size:clamp(2.6rem,11.5vw,4rem)}.brand-stream{height:118px}.catalog-shell{padding:24px 18px 50px}.catalog-tools{grid-template-columns:1fr}.catalog-tools .search{grid-column:auto}.selection-button,.clear-button{min-height:48px}body .catalog-shell .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 10px}body .catalog-shell .product-visual{height:clamp(220px,64vw,320px);flex-basis:clamp(220px,64vw,320px)}.product-grid .product-card{display:flex;min-width:0;height:100%;flex-direction:column}.product-grid .product-meta{flex:1;display:flex;flex-direction:column;padding:12px 0}.product-grid .product-meta>div{min-width:0}.product-grid .product-meta h3{font-size:.95rem}.product-grid .product-meta p{font-size:.52rem;line-height:1.45}.product-grid .add-button{position:static;align-self:flex-start;margin-top:10px;padding:5px 8px}.product-grid .brand-logo{width:76px}.product-grid .favorite,.product-grid .product-arrow{width:34px;height:34px}}

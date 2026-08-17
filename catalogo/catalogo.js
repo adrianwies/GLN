@@ -19,6 +19,79 @@ const $ = (selector) => document.querySelector(selector)
 const grid = $('#product-grid')
 const empty = $('#empty-state')
 
+function setupCatalogSelect(select) {
+  const field = select.closest('label')
+  const menu = document.createElement('div')
+  menu.className = 'catalog-select'
+  menu.innerHTML = `<button class="catalog-select__trigger" type="button" aria-haspopup="listbox" aria-expanded="false"><span></span><i aria-hidden="true">⌄</i></button><div class="catalog-select__menu" role="listbox"></div>`
+  select.classList.add('catalog-select__native')
+  field.append(menu)
+
+  const trigger = menu.querySelector('.catalog-select__trigger')
+  const list = menu.querySelector('.catalog-select__menu')
+  const sync = () => {
+    const selected = select.options[select.selectedIndex]
+    trigger.querySelector('span').textContent = selected?.textContent || ''
+    list.querySelectorAll('[role="option"]').forEach((option) => option.setAttribute('aria-selected', String(option.dataset.value === select.value)))
+  }
+  const close = () => { menu.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false') }
+  const open = () => {
+    document.querySelectorAll('.catalog-select.open').forEach((item) => item !== menu && item.querySelector('.catalog-select__trigger').click())
+    menu.classList.add('open'); trigger.setAttribute('aria-expanded', 'true')
+  }
+
+  list.innerHTML = [...select.options].map((option) => `<button type="button" role="option" data-value="${option.value}" aria-selected="false">${option.textContent}</button>`).join('')
+  trigger.addEventListener('click', () => menu.classList.contains('open') ? close() : open())
+  trigger.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') close()
+    if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(); list.querySelector('[aria-selected="true"]')?.focus() }
+  })
+  list.addEventListener('click', (event) => {
+    const option = event.target.closest('[role="option"]')
+    if (!option) return
+    select.value = option.dataset.value
+    select.dispatchEvent(new Event('change', { bubbles: true }))
+    close(); trigger.focus()
+  })
+  select.addEventListener('change', sync)
+  select.syncCatalogSelect = sync
+  sync()
+}
+
+function syncCatalogSelect(id) { $(id).syncCatalogSelect?.() }
+
+function keepCatalogToolsVisible() {
+  const tools = $('.catalog-tools')
+  const marker = document.createElement('div')
+  tools.before(marker)
+  let fixed = false
+
+  const update = () => {
+    const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) + 10
+    if (!fixed && tools.getBoundingClientRect().top <= offset) {
+      const bounds = tools.getBoundingClientRect()
+      marker.style.height = `${tools.offsetHeight}px`
+      tools.style.width = `${bounds.width}px`
+      tools.style.left = `${bounds.left}px`
+      tools.classList.add('catalog-tools--fixed')
+      fixed = true
+    } else if (fixed && marker.getBoundingClientRect().top > offset) {
+      tools.classList.remove('catalog-tools--fixed')
+      tools.style.removeProperty('width'); tools.style.removeProperty('left')
+      marker.style.removeProperty('height')
+      fixed = false
+    } else if (fixed) {
+      const bounds = marker.getBoundingClientRect()
+      tools.style.width = `${bounds.width}px`
+      tools.style.left = `${bounds.left}px`
+    }
+  }
+
+  window.addEventListener('scroll', update, { passive: true })
+  window.addEventListener('resize', update)
+  update()
+}
+
 function startBrandStream() {
   document.querySelectorAll('.brand-lane').forEach((lane, index) => {
     const duration = 48 + index * 5 + Math.random() * 2
@@ -50,12 +123,14 @@ function render() {
 function resetFilters() {
   state.category = 'Todos'; state.brand = ''; state.query = ''
   $('#search').value = ''; $('#brand-filter').value = ''; $('#category-filter').value = 'Todos'
+  syncCatalogSelect('#brand-filter'); syncCatalogSelect('#category-filter')
   render()
 }
 
 document.addEventListener('click', (event) => {
   const select = event.target.closest('[data-select]')
   if (select) { state.cart = changeCartQuantity(select.dataset.select, 1); render() }
+  if (!event.target.closest('.catalog-select')) document.querySelectorAll('.catalog-select.open').forEach((menu) => menu.querySelector('.catalog-select__trigger').click())
 })
 
 enableProductCardNavigation(grid)
@@ -82,6 +157,7 @@ async function init() {
       state.brand = requestedBrand
       $('#brand-filter').value = requestedBrand
     }
+    document.querySelectorAll('.catalog-tools select').forEach(setupCatalogSelect)
     render()
   } catch (error) {
     $('#results-count').textContent = error.message
@@ -90,4 +166,5 @@ async function init() {
 }
 
 startBrandStream()
+keepCatalogToolsVisible()
 init()
