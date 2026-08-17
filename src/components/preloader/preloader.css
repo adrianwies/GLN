@@ -1,0 +1,76 @@
+html.is-loading,
+html.is-loading body{
+  overflow:hidden!important;
+  background:var(--color-primary-dark,#061f2b)
+}
+
+html.is-loading body>:not(site-preloader){visibility:hidden}
+
+site-preloader{
+  position:fixed;
+  z-index:30000;
+  inset:0;
+  width:100vw;
+  min-height:100vh;
+  min-height:100dvh;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 45%,color-mix(in srgb,var(--color-white,#fff) 6%,transparent),transparent 34%),
+    linear-gradient(145deg,var(--color-primary,#0a3043),var(--color-primary-dark,#061f2b));
+  opacity:1;
+  visibility:visible;
+  transition:opacity .45s ease,visibility .45s ease;
+  pointer-events:auto
+}
+
+site-preloader.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
+
+.site-preloader__content{
+  width:min(72vw,310px);
+  display:grid;
+  justify-items:center;
+  gap:clamp(30px,5vh,48px)
+}
+
+.site-preloader__content img{
+  width:clamp(190px,24vw,270px);
+  height:auto;
+  object-fit:contain;
+  opacity:0;
+  transform:translateY(10px);
+  animation:preloader-logo-in .55s ease .08s forwards
+}
+
+.site-preloader__track{
+  position:relative;
+  width:min(68vw,280px);
+  height:1px;
+  overflow:hidden;
+  background:color-mix(in srgb,var(--color-white,#fff) 20%,transparent)
+}
+
+.site-preloader__track span{
+  position:absolute;
+  inset:0 auto 0 0;
+  width:34%;
+  background:var(--color-accent,#b59355);
+  box-shadow:0 0 12px color-mix(in srgb,var(--color-accent,#b59355) 45%,transparent);
+  animation:preloader-line 1.35s cubic-bezier(.65,0,.35,1) infinite
+}
+
+@keyframes preloader-logo-in{to{opacity:1;transform:none}}
+@keyframes preloader-line{0%{transform:translateX(-110%)}50%{transform:translateX(98%)}100%{transform:translateX(295%)}}
+
+@media(max-width:520px){
+  .site-preloader__content{width:min(78vw,280px);gap:34px}
+  .site-preloader__content img{width:clamp(175px,56vw,225px)}
+  .site-preloader__track{width:min(72vw,245px)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  site-preloader{transition-duration:.01ms}
+  .site-preloader__content img{opacity:1;transform:none;animation:none}
+  .site-preloader__track span{left:33%;animation:none}
+}

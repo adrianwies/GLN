@@ -60,6 +60,23 @@ function setupCatalogSelect(select) {
 
 function syncCatalogSelect(id) { $(id).syncCatalogSelect?.() }
 
+function setupMobileFilters() {
+  const tools = $('.catalog-tools')
+  const fields = $('#catalog-filter-fields')
+  const toggle = $('#filter-toggle')
+  if (!tools || !fields || !toggle) return
+
+  const setOpen = (open) => {
+    tools.classList.toggle('filters-open', open)
+    toggle.setAttribute('aria-expanded', String(open))
+  }
+
+  toggle.addEventListener('click', () => setOpen(!tools.classList.contains('filters-open')))
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 650) setOpen(false)
+  })
+}
+
 function keepCatalogToolsVisible() {
   const tools = $('.catalog-tools')
   const marker = document.createElement('div')
@@ -68,15 +85,20 @@ function keepCatalogToolsVisible() {
 
   const update = () => {
     const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) + 10
+    const headerHeight = document.querySelector('site-header header')?.getBoundingClientRect().height || offset
+    document.documentElement.style.setProperty('--catalog-gap-top', `${headerHeight}px`)
+    document.documentElement.style.setProperty('--catalog-gap-height', `${Math.max(0, offset - headerHeight)}px`)
     if (!fixed && tools.getBoundingClientRect().top <= offset) {
       const bounds = tools.getBoundingClientRect()
       marker.style.height = `${tools.offsetHeight}px`
       tools.style.width = `${bounds.width}px`
       tools.style.left = `${bounds.left}px`
       tools.classList.add('catalog-tools--fixed')
+      document.body.classList.add('catalog-tools-stuck')
       fixed = true
     } else if (fixed && marker.getBoundingClientRect().top > offset) {
       tools.classList.remove('catalog-tools--fixed')
+      document.body.classList.remove('catalog-tools-stuck')
       tools.style.removeProperty('width'); tools.style.removeProperty('left')
       marker.style.removeProperty('height')
       fixed = false
@@ -91,6 +113,8 @@ function keepCatalogToolsVisible() {
   window.addEventListener('resize', update)
   update()
 }
+
+setupMobileFilters()
 
 function startBrandStream() {
   document.querySelectorAll('.brand-lane').forEach((lane, index) => {

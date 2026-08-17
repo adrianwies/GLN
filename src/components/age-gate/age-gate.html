@@ -1,0 +1,36 @@
+<site-age-gate aria-hidden="true">
+  <div
+    class="age-gate"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="age-gate-title"
+    aria-describedby="age-gate-description"
+  >
+    <div class="age-gate__ambient" aria-hidden="true"></div>
+    <div class="age-gate__content">
+      <img class="age-gate__logo" src="/images/LogoGLN.png" alt="Grupo de Licores Nacionales" />
+
+      <div class="age-gate__question" data-age-question>
+        <p class="age-gate__eyebrow"><span></span>Verificación de edad<span></span></p>
+        <h1 id="age-gate-title">¿Eres mayor de 18 años?</h1>
+        <p class="age-gate__description" id="age-gate-description">
+          Para ingresar a nuestro sitio, confirma que tienes 18 años de edad o más.
+        </p>
+        <div class="age-gate__actions">
+          <button type="button" data-age-accept>Sí, tengo 18 años o más</button>
+          <button type="button" data-age-decline>No, soy menor de 18 años</button>
+        </div>
+      </div>
+
+      <div class="age-gate__denied" data-age-denied hidden>
+        <p class="age-gate__denied-title" id="age-gate-denied-title">Acceso restringido</p>
+        <p>El contenido de este sitio está dirigido exclusivamente a personas mayores de 18 años.</p>
+        <button type="button" data-age-retry>Volver a la pregunta</button>
+      </div>
+
+      <div class="age-gate__responsibility" aria-label="Advertencias sobre el consumo de alcohol">
+        <p>Tomar bebidas alcohólicas en exceso es dañino</p>
+      </div>
+    </div>
+  </div>
+</site-age-gate>

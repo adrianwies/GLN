@@ -1,4 +1,6 @@
 import './header.css'
+import '../preloader/preloader.js'
+import '../age-gate/age-gate.js'
 
 import '../cart-drawer/cart-drawer.js'
 import { cartItemCount, readCart } from '../cart-drawer/cart-store.js'

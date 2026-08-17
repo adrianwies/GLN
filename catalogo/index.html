@@ -41,10 +41,15 @@
 
         <div class="catalog-tools">
           <label class="search"><span>Buscar</span><input id="search" type="search" placeholder="Nombre, marca o perfil…" autocomplete="off" /><b>⌕</b></label>
-          <label><span>Tipo de bebida</span><select id="category-filter"><option value="Todos">Todos los tipos</option></select></label>
-          <label><span>Marca</span><select id="brand-filter"><option value="">Todas las marcas</option></select></label>
-          <label><span>Ordenar</span><select id="sort"><option value="featured">Destacados</option><option value="name">Nombre A–Z</option><option value="category">Categoría</option></select></label>
-          <button class="clear-button" id="clear-filters" type="button">Limpiar filtros ×</button>
+          <div class="catalog-filter-fields" id="catalog-filter-fields">
+            <label><span>Tipo de bebida</span><select id="category-filter"><option value="Todos">Todos los tipos</option></select></label>
+            <label><span>Marca</span><select id="brand-filter"><option value="">Todas las marcas</option></select></label>
+            <label><span>Ordenar</span><select id="sort"><option value="featured">Destacados</option><option value="name">Nombre A–Z</option><option value="category">Categoría</option></select></label>
+          </div>
+          <div class="catalog-tool-actions">
+            <button class="filter-toggle" id="filter-toggle" type="button" aria-expanded="false" aria-controls="catalog-filter-fields">Filtros <span class="material-symbols-outlined" aria-hidden="true">keyboard_arrow_down</span></button>
+            <button class="clear-button" id="clear-filters" type="button"><span class="clear-button__label">Limpiar filtros</span><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+          </div>
         </div>
 
         <div class="results-line"><p id="results-count" aria-live="polite">Cargando colección…</p></div>
