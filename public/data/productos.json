@@ -1,938 +1,904 @@
 [
-    {
-        "order":  1,
-        "slug":  "bola-ocho-negroni",
-        "name":  "Bola Ocho Negroni",
-        "brand":  "Bola Ocho",
-        "category":  "Licor premium",
-        "subtype":  "Cóctel listo para servir",
-        "volume":  "500 ml",
-        "alcohol":  "24% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Cítrico",
-                      "Amargo",
-                      "Especiado"
-                  ],
-        "tags":  [
-                     "aperitivo",
-                     "cocteleria",
-                     "negroni"
-                 ],
-        "description":  "Un clásico italiano listo para servir, con un balance elegante entre notas cítricas, amargas y especiadas.",
-        "badge":  "Destacado",
-        "color":  "#9b6638",
-        "logo":  "/images/logo-bolaocho.png",
-        "image":  "/images/negroni-licor.jpg",
-        "price":  45.9
-    },
-    {
-        "order":  2,
-        "slug":  "bola-ocho-capitan",
-        "name":  "Bola Ocho Capitán",
-        "brand":  "Bola Ocho",
-        "category":  "Licor premium",
-        "subtype":  "Cóctel listo para servir",
-        "volume":  "500 ml",
-        "alcohol":  "24% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Vermouth",
-                      "Pisco",
-                      "Elegante"
-                  ],
-        "tags":  [
-                     "aperitivo",
-                     "cocteleria",
-                     "pisco"
-                 ],
-        "description":  "La interpretación lista para servir de un emblema de la coctelería peruana, intensa, aromática y equilibrada.",
-        "badge":  "",
-        "color":  "#8d543c",
-        "logo":  "/images/logo-bolaocho.png",
-        "image":  "/images/bolaocho-capitan.jpg",
-        "price":  45.9
-    },
-    {
-        "order":  3,
-        "slug":  "bola-ocho-espresso-martini",
-        "name":  "Bola Ocho Espresso Martini",
-        "brand":  "Bola Ocho",
-        "category":  "Licor premium",
-        "subtype":  "Cóctel listo para servir",
-        "volume":  "500 ml",
-        "alcohol":  "24% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Café",
-                      "Tostado",
-                      "Sedoso"
-                  ],
-        "tags":  [
-                     "digestivo",
-                     "cocteleria",
-                     "cafe"
-                 ],
-        "description":  "Un cóctel vibrante de perfil tostado y textura sedosa, ideal para cerrar la noche con carácter.",
-        "badge":  "",
-        "color":  "#594137",
-        "logo":  "/images/logo-bolaocho.png",
-        "image":  "/images/bolaocho-martini.jpg",
-        "price":  45.9
-    },
-    {
-        "order":  4,
-        "slug":  "bola-ocho-negroni-mezcal",
-        "name":  "Bola Ocho Negroni Mezcal",
-        "brand":  "Bola Ocho",
-        "category":  "Licor premium",
-        "subtype":  "Cóctel listo para servir",
-        "volume":  "500 ml",
-        "alcohol":  "24% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Ahumado",
-                      "Amargo",
-                      "Cítrico"
-                  ],
-        "tags":  [
-                     "aperitivo",
-                     "cocteleria",
-                     "negroni",
-                     "ahumado"
-                 ],
-        "description":  "Una versión audaz del Negroni donde el carácter ahumado del mezcal acompaña su amargor cítrico.",
-        "badge":  "",
-        "color":  "#695548",
-        "logo":  "/images/logo-bolaocho.png",
-        "image":  "/images/negroni-mezcal.jpg",
-        "price":  45.9
-    },
-    {
-        "order":  5,
-        "slug":  "bola-ocho-negroni-pisco",
-        "name":  "Bola Ocho Negroni Pisco",
-        "brand":  "Bola Ocho",
-        "category":  "Licor premium",
-        "subtype":  "Cóctel listo para servir",
-        "volume":  "500 ml",
-        "alcohol":  "24% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Pisco",
-                      "Herbal",
-                      "Cítrico"
-                  ],
-        "tags":  [
-                     "aperitivo",
-                     "cocteleria",
-                     "negroni",
-                     "pisco"
-                 ],
-        "description":  "La personalidad aromática del pisco peruano se integra a un Negroni herbal, cítrico y contemporáneo.",
-        "badge":  "",
-        "color":  "#b07145",
-        "logo":  "/images/logo-bolaocho.png",
-        "image":  "/images/negroni-pisco.jpg",
-        "price":  45.9
-    },
-    {
-        "order":  6,
-        "slug":  "bola-ocho-negroni-ron",
-        "name":  "Bola Ocho Negroni Ron",
-        "brand":  "Bola Ocho",
-        "category":  "Licor premium",
-        "subtype":  "Cóctel listo para servir",
-        "volume":  "500 ml",
-        "alcohol":  "24% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Ron",
-                      "Dulce",
-                      "Especiado"
-                  ],
-        "tags":  [
-                     "aperitivo",
-                     "cocteleria",
-                     "negroni",
-                     "ron"
-                 ],
-        "description":  "Una lectura cálida del Negroni, con la suavidad del ron y un final especiado de agradable persistencia.",
-        "badge":  "",
-        "color":  "#8c5136",
-        "logo":  "/images/logo-bolaocho.png",
-        "image":  "/images/negroni-ron.jpg",
-        "price":  45.9
-    },
-    {
-        "order":  7,
-        "slug":  "soviet-vodka-original-1l",
-        "name":  "Soviet Vodka Original 1 L",
-        "brand":  "Soviet",
-        "category":  "Vodka",
-        "subtype":  "Vodka premium",
-        "volume":  "1 L",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Puro",
-                      "Cristalino",
-                      "Versátil"
-                  ],
-        "tags":  [
-                     "destilado",
-                     "cocteleria",
-                     "vodka",
-                     "original"
-                 ],
-        "description":  "Vodka premium de perfil limpio y cristalino, versátil para servir frío o como base de coctelería.",
-        "badge":  "Clásico",
-        "color":  "#b9c9d1",
-        "logo":  "/images/logo-soviet.png",
-        "image":  "/images/soviet-vodka.jpg",
-        "price":  39.9
-    },
-    {
-        "order":  8,
-        "slug":  "soviet-vodka-original-2l",
-        "name":  "Soviet Vodka Original 2 L",
-        "brand":  "Soviet",
-        "category":  "Vodka",
-        "subtype":  "Vodka premium",
-        "volume":  "2 L",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Puro",
-                      "Cristalino",
-                      "Rendidor"
-                  ],
-        "tags":  [
-                     "destilado",
-                     "cocteleria",
-                     "vodka",
-                     "original"
-                 ],
-        "description":  "El perfil limpio de Soviet Original en una presentación de mayor rendimiento para reuniones y barras.",
-        "badge":  "",
-        "color":  "#aebfc8",
-        "logo":  "/images/logo-soviet.png",
-        "image":  "/images/soviet-vodka2l.jpg",
-        "price":  69.9
-    },
-    {
-        "order":  9,
-        "slug":  "soviet-green-apple-1l",
-        "name":  "Soviet Green Apple 1 L",
-        "brand":  "Soviet",
-        "category":  "Vodka",
-        "subtype":  "Vodka saborizado",
-        "volume":  "1 L",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Manzana verde",
-                      "Fresco",
-                      "Frutal"
-                  ],
-        "tags":  [
-                     "destilado",
-                     "cocteleria",
-                     "vodka",
-                     "frutal"
-                 ],
-        "description":  "Vodka de manzana verde con un perfil fresco y frutal que aporta vivacidad a cócteles y combinados.",
-        "badge":  "",
-        "color":  "#9cae63",
-        "logo":  "/images/logo-soviet.png",
-        "image":  "/images/soviet-greenapple.jpg",
-        "price":  39.9
-    },
-    {
-        "order":  10,
-        "slug":  "soviet-green-apple-2l",
-        "name":  "Soviet Green Apple 2 L",
-        "brand":  "Soviet",
-        "category":  "Vodka",
-        "subtype":  "Vodka saborizado",
-        "volume":  "2 L",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Manzana verde",
-                      "Fresco",
-                      "Rendidor"
-                  ],
-        "tags":  [
-                     "destilado",
-                     "cocteleria",
-                     "vodka",
-                     "frutal"
-                 ],
-        "description":  "El sabor fresco de manzana verde de Soviet en formato de 2 litros, pensado para compartir y mezclar.",
-        "badge":  "",
-        "color":  "#91a35a",
-        "logo":  "/images/logo-soviet.png",
-        "image":  "/images/soviet-greenapple2l.jpg",
-        "price":  69.9
-    },
-    {
-        "order":  11,
-        "slug":  "el-mariachi-rubio",
-        "name":  "El Mariachi Rubio",
-        "brand":  "El Mariachi",
-        "category":  "Licor",
-        "subtype":  "Licor rubio",
-        "volume":  "1 L",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Dorado",
-                      "Intenso",
-                      "Versátil"
-                  ],
-        "tags":  [
-                     "destilado",
-                     "cocteleria",
-                     "licor"
-                 ],
-        "description":  "Licor rubio de color dorado y carácter intenso, creado para disfrutarse solo o en combinaciones de barra.",
-        "badge":  "",
-        "color":  "#c49349",
-        "logo":  "/images/logo-mariachi.png",
-        "image":  "/images/mariachi-rubio.jpg",
-        "price":  34.9
-    },
-    {
-        "order":  12,
-        "slug":  "el-mariachi-blanco",
-        "name":  "El Mariachi Blanco",
-        "brand":  "El Mariachi",
-        "category":  "Licor",
-        "subtype":  "Licor blanco",
-        "volume":  "1 L",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Cristalino",
-                      "Limpio",
-                      "Versátil"
-                  ],
-        "tags":  [
-                     "destilado",
-                     "cocteleria",
-                     "licor"
-                 ],
-        "description":  "Licor blanco de apariencia cristalina y perfil limpio, ideal para servir frío o utilizar como una base versátil en coctelería.",
-        "badge":  "Nuevo",
-        "color":  "#aebec3",
-        "logo":  "/images/logo-mariachi.png",
-        "image":  "/images/mariachi-blanco.jpg",
-        "price":  34.9
-    },
-    {
-        "order":  13,
-        "slug":  "mr-jigger-menta",
-        "name":  "Mr. Jigger Menta",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor saborizado",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Menta",
-                      "Fresco",
-                      "Herbal"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "herbal",
-                     "fresco"
-                 ],
-        "description":  "Licor de menta refrescante y herbal, ideal para cócteles vibrantes, digestivos y preparaciones de postre.",
-        "badge":  "",
-        "color":  "#4b846b",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-menta.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  14,
-        "slug":  "mr-jigger-triple-seco",
-        "name":  "Mr. Jigger Triple Seco",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor cítrico",
-        "volume":  "750 ml",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Naranja",
-                      "Cítrico",
-                      "Seco"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "citrico"
-                 ],
-        "description":  "Licor cítrico de naranja y final seco, indispensable para margaritas y clásicos de la coctelería.",
-        "badge":  "Destacado",
-        "color":  "#c67837",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-triplesec.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  15,
-        "slug":  "mr-jigger-blue-curacao",
-        "name":  "Mr. Jigger Blue Curaçao",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor cítrico",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Naranja",
-                      "Cítrico",
-                      "Vibrante"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "citrico"
-                 ],
-        "description":  "Licor cítrico de intenso color azul que aporta notas de naranja y una presencia visual inconfundible.",
-        "badge":  "",
-        "color":  "#2782a8",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-curacao.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  16,
-        "slug":  "mr-jigger-amaretto",
-        "name":  "Mr. Jigger Amaretto",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor saborizado",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Almendra",
-                      "Dulce",
-                      "Aromático"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "dulce",
-                     "digestivo"
-                 ],
-        "description":  "Licor dulce y aromático con notas de almendra, perfecto para beber con hielo, mezclar o acompañar postres.",
-        "badge":  "",
-        "color":  "#9a603b",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-amaretto.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  17,
-        "slug":  "mr-jigger-sandia",
-        "name":  "Mr. Jigger Sandía",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor frutal",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Sandía",
-                      "Jugoso",
-                      "Fresco"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "frutal",
-                     "fresco"
-                 ],
-        "description":  "Licor frutal de sandía, jugoso y refrescante, pensado para mezclas ligeras y cócteles llenos de color.",
-        "badge":  "",
-        "color":  "#c75a62",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-sandia.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  18,
-        "slug":  "mr-jigger-frutos-rojos",
-        "name":  "Mr. Jigger Frutos Rojos",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor frutal",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Frutos rojos",
-                      "Dulce",
-                      "Ácido"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "frutal"
-                 ],
-        "description":  "Una mezcla frutal de dulzor equilibrado y acidez vivaz para cócteles aromáticos y refrescantes.",
-        "badge":  "",
-        "color":  "#9f3f58",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-frutosrojos.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  19,
-        "slug":  "mr-jigger-fresa",
-        "name":  "Mr. Jigger Fresa",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor frutal",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Fresa",
-                      "Dulce",
-                      "Frutal"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "frutal"
-                 ],
-        "description":  "Licor de fresa dulce y expresivo, una base versátil para bebidas cremosas, frozen y cócteles frutales.",
-        "badge":  "",
-        "color":  "#be4c55",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-fresa.JPG",
-        "price":  24.9
-    },
-    {
-        "order":  20,
-        "slug":  "mr-jigger-durazno",
-        "name":  "Mr. Jigger Durazno",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor frutal",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Durazno",
-                      "Suave",
-                      "Frutal"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "frutal"
-                 ],
-        "description":  "Licor de durazno suave y aromático que aporta dulzor frutal a combinados, spritzes y cócteles tropicales.",
-        "badge":  "",
-        "color":  "#cf8558",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-durazno.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  21,
-        "slug":  "mr-jigger-melon",
-        "name":  "Mr. Jigger Melón",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor frutal",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Melón",
-                      "Dulce",
-                      "Fresco"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "frutal",
-                     "fresco"
-                 ],
-        "description":  "Licor de melón de perfil dulce y fresco, ideal para mezclas tropicales y preparaciones de color vibrante.",
-        "badge":  "",
-        "color":  "#78a85d",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-melon.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  22,
-        "slug":  "mr-jigger-apple-sour",
-        "name":  "Mr. Jigger Apple Sour",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor frutal",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Manzana",
-                      "Ácido",
-                      "Fresco"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "frutal",
-                     "fresco"
-                 ],
-        "description":  "Licor de manzana con un toque ácido y refrescante, diseñado para cócteles jóvenes y equilibrados.",
-        "badge":  "",
-        "color":  "#8da64f",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-applesour.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  23,
-        "slug":  "mr-jigger-cafe",
-        "name":  "Mr. Jigger Café",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor saborizado",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Café",
-                      "Tostado",
-                      "Dulce"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "cafe",
-                     "digestivo"
-                 ],
-        "description":  "Licor de café con notas tostadas y dulces, perfecto para sobremesas, cócteles cremosos y bebidas calientes.",
-        "badge":  "",
-        "color":  "#65483c",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-cafe.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  24,
-        "slug":  "mr-jigger-cacao",
-        "name":  "Mr. Jigger Cacao",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor saborizado",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Cacao",
-                      "Dulce",
-                      "Sedoso"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "dulce",
-                     "digestivo"
-                 ],
-        "description":  "Licor de cacao dulce y sedoso, creado para coctelería de postre y combinaciones de perfil indulgente.",
-        "badge":  "",
-        "color":  "#76513c",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-cacao.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  25,
-        "slug":  "mr-jigger-neutro-cocteleria",
-        "name":  "Mr. Jigger Neutro para Coctelería",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Base para coctelería",
-        "volume":  "1 L",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Neutro",
-                      "Versátil",
-                      "Intenso"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "base"
-                 ],
-        "description":  "Una base neutra de alta graduación diseñada para maceraciones, mezclas y creaciones profesionales de barra.",
-        "badge":  "",
-        "color":  "#89969a",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-licor.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  26,
-        "slug":  "mr-jigger-banana",
-        "name":  "Mr. Jigger Banana",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor frutal",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Banana",
-                      "Tropical",
-                      "Dulce"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "frutal",
-                     "tropical"
-                 ],
-        "description":  "Licor tropical de banana con dulzor envolvente, ideal para frozen, cócteles cremosos y combinaciones exóticas.",
-        "badge":  "",
-        "color":  "#c0a345",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-banana.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  27,
-        "slug":  "mr-jigger-coco",
-        "name":  "Mr. Jigger Coco",
-        "brand":  "Mr. Jigger",
-        "category":  "Licor",
-        "subtype":  "Licor frutal",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Coco",
-                      "Tropical",
-                      "Cremoso"
-                  ],
-        "tags":  [
-                     "licor",
-                     "cocteleria",
-                     "frutal",
-                     "tropical"
-                 ],
-        "description":  "Licor de coco de perfil tropical y cremoso, perfecto para piñas coladas y mezclas refrescantes.",
-        "badge":  "",
-        "color":  "#c7b994",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-coco.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  28,
-        "slug":  "mr-jigger-bitter-amargo",
-        "name":  "Mr. Jigger Bitter Amargo",
-        "brand":  "Mr. Jigger",
-        "category":  "Bitter",
-        "subtype":  "Bitter aromático",
-        "volume":  "75 ml",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Amargo",
-                      "Aromático",
-                      "Concentrado"
-                  ],
-        "tags":  [
-                     "bitter",
-                     "cocteleria",
-                     "aromatico"
-                 ],
-        "description":  "Bitter aromático concentrado que añade profundidad, amargor y complejidad con unas pocas gotas.",
-        "badge":  "",
-        "color":  "#784a35",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-amargo.jpg",
-        "price":  18.9
-    },
-    {
-        "order":  29,
-        "slug":  "mr-jigger-bitter-naranja",
-        "name":  "Mr. Jigger Bitter Naranja",
-        "brand":  "Mr. Jigger",
-        "category":  "Bitter",
-        "subtype":  "Bitter cítrico",
-        "volume":  "75 ml",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Naranja",
-                      "Amargo",
-                      "Cítrico"
-                  ],
-        "tags":  [
-                     "bitter",
-                     "cocteleria",
-                     "citrico"
-                 ],
-        "description":  "Bitter de naranja concentrado, con amargor cítrico para perfumar y equilibrar cócteles clásicos y modernos.",
-        "badge":  "",
-        "color":  "#b66a35",
-        "logo":  "/images/logo-jigger.png",
-        "image":  "/images/jigger-bitternaranja.jpg",
-        "price":  18.9
-    },
-    {
-        "order":  30,
-        "slug":  "bandolero-jarabe-goma",
-        "name":  "Bandolero Jarabe de Goma",
-        "brand":  "Bandolero",
-        "category":  "Jarabe",
-        "subtype":  "Jarabe para coctelería",
-        "volume":  "750 ml",
-        "alcohol":  "Sin alcohol indicado",
-        "origin":  "Perú",
-        "notes":  [
-                      "Dulce",
-                      "Neutro",
-                      "Versátil"
-                  ],
-        "tags":  [
-                     "jarabe",
-                     "cocteleria",
-                     "mezclador"
-                 ],
-        "description":  "Jarabe de goma de dulzor uniforme, esencial para aportar textura y equilibrio a todo tipo de cócteles.",
-        "badge":  "",
-        "color":  "#b29a6d",
-        "logo":  "/images/logo-bandolero.png",
-        "image":  "/images/bandolero-goma.jpg",
-        "price":  17.9
-    },
-    {
-        "order":  31,
-        "slug":  "bandolero-jarabe-granadina",
-        "name":  "Bandolero Jarabe de Granadina",
-        "brand":  "Bandolero",
-        "category":  "Jarabe",
-        "subtype":  "Jarabe para coctelería",
-        "volume":  "750 ml",
-        "alcohol":  "Sin alcohol indicado",
-        "origin":  "Perú",
-        "notes":  [
-                      "Granadina",
-                      "Dulce",
-                      "Frutal"
-                  ],
-        "tags":  [
-                     "jarabe",
-                     "cocteleria",
-                     "mezclador",
-                     "frutal"
-                 ],
-        "description":  "Jarabe de granadina frutal y colorido, pensado para endulzar y dar una presentación vibrante a las bebidas.",
-        "badge":  "",
-        "color":  "#a63f46",
-        "logo":  "/images/logo-bandolero.png",
-        "image":  "/images/bandolero-granadina.jpg",
-        "price":  17.9
-    },
-    {
-        "order":  32,
-        "slug":  "bandolero-bitter-amargo",
-        "name":  "Bandolero Bitter Amargo",
-        "brand":  "Bandolero",
-        "category":  "Bitter",
-        "subtype":  "Bitter aromático",
-        "volume":  "75 ml",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Amargo",
-                      "Aromático",
-                      "Concentrado"
-                  ],
-        "tags":  [
-                     "bitter",
-                     "cocteleria",
-                     "aromatico"
-                 ],
-        "description":  "Bitter amargo y aromático para aportar estructura, profundidad y un final complejo a los cócteles.",
-        "badge":  "",
-        "color":  "#7b4937",
-        "logo":  "/images/logo-bandolero.png",
-        "image":  "/images/bandolero-amargo.jpg",
-        "price":  18.9
-    },
-    {
-        "order":  33,
-        "slug":  "bandolero-macerado-anis",
-        "name":  "Bandolero Macerado de Anís",
-        "brand":  "Bandolero",
-        "category":  "Licor",
-        "subtype":  "Licor macerado",
-        "volume":  "750 ml",
-        "alcohol":  "20% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Anís",
-                      "Herbal",
-                      "Aromático"
-                  ],
-        "tags":  [
-                     "licor",
-                     "macerado",
-                     "herbal",
-                     "digestivo"
-                 ],
-        "description":  "Licor macerado de anís con un perfil herbal y aromático, de paso amable y final persistentemente especiado.",
-        "badge":  "",
-        "color":  "#8f7658",
-        "logo":  "/images/logo-bandolero.png",
-        "image":  "/images/bandolero-anis.jpg",
-        "price":  24.9
-    },
-    {
-        "order":  34,
-        "slug":  "bandolero-licor-coca",
-        "name":  "Bandolero Licor de Coca",
-        "brand":  "Bandolero",
-        "category":  "Licor",
-        "subtype":  "Licor herbal",
-        "volume":  "750 ml",
-        "alcohol":  "40% Alc./Vol.",
-        "origin":  "Perú",
-        "notes":  [
-                      "Coca",
-                      "Herbal",
-                      "Intenso"
-                  ],
-        "tags":  [
-                     "licor",
-                     "herbal",
-                     "digestivo"
-                 ],
-        "description":  "Licor de coca de marcado carácter herbal e intensidad aromática, inspirado en un ingrediente emblemático del Perú.",
-        "badge":  "",
-        "color":  "#64744e",
-        "logo":  "/images/logo-bandolero.png",
-        "image":  "/images/bandolero-coca.jpg",
-        "price":  24.9
-    }
+  {
+    "order": 1,
+    "slug": "bola-ocho-negroni",
+    "name": "Bola Ocho Negroni",
+    "brand": "Bola Ocho",
+    "category": "Licor premium",
+    "subtype": "Cóctel listo para servir",
+    "volume": "500 ml",
+    "alcohol": "24% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Cítrico",
+      "Amargo",
+      "Especiado"
+    ],
+    "tags": [
+      "aperitivo",
+      "cocteleria",
+      "negroni"
+    ],
+    "description": "Un clásico italiano listo para servir, con un balance elegante entre notas cítricas, amargas y especiadas.",
+    "badge": "Destacado",
+    "color": "#9b6638",
+    "logo": "/images/logo-bolaocho.png",
+    "image": "/images/negroni-licor.png"
+  },
+  {
+    "order": 2,
+    "slug": "bola-ocho-capitan",
+    "name": "Bola Ocho Capitán",
+    "brand": "Bola Ocho",
+    "category": "Licor premium",
+    "subtype": "Cóctel listo para servir",
+    "volume": "500 ml",
+    "alcohol": "24% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Vermouth",
+      "Pisco",
+      "Elegante"
+    ],
+    "tags": [
+      "aperitivo",
+      "cocteleria",
+      "pisco"
+    ],
+    "description": "La interpretación lista para servir de un emblema de la coctelería peruana, intensa, aromática y equilibrada.",
+    "badge": "",
+    "color": "#8d543c",
+    "logo": "/images/logo-bolaocho.png",
+    "image": "/images/bolaocho-capitan.png"
+  },
+  {
+    "order": 3,
+    "slug": "bola-ocho-espresso-martini",
+    "name": "Bola Ocho Espresso Martini",
+    "brand": "Bola Ocho",
+    "category": "Licor premium",
+    "subtype": "Cóctel listo para servir",
+    "volume": "500 ml",
+    "alcohol": "24% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Café",
+      "Tostado",
+      "Sedoso"
+    ],
+    "tags": [
+      "digestivo",
+      "cocteleria",
+      "cafe"
+    ],
+    "description": "Un cóctel vibrante de perfil tostado y textura sedosa, ideal para cerrar la noche con carácter.",
+    "badge": "",
+    "color": "#594137",
+    "logo": "/images/logo-bolaocho.png",
+    "image": "/images/bolaocho-martini1.png"
+  },
+  {
+    "order": 4,
+    "slug": "bola-ocho-negroni-mezcal",
+    "name": "Bola Ocho Negroni Mezcal",
+    "brand": "Bola Ocho",
+    "category": "Licor premium",
+    "subtype": "Cóctel listo para servir",
+    "volume": "500 ml",
+    "alcohol": "24% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Ahumado",
+      "Amargo",
+      "Cítrico"
+    ],
+    "tags": [
+      "aperitivo",
+      "cocteleria",
+      "negroni",
+      "ahumado"
+    ],
+    "description": "Una versión audaz del Negroni donde el carácter ahumado del mezcal acompaña su amargor cítrico.",
+    "badge": "",
+    "color": "#695548",
+    "logo": "/images/logo-bolaocho.png",
+    "image": "/images/negroni-mezcal.jpg"
+  },
+  {
+    "order": 5,
+    "slug": "bola-ocho-negroni-pisco",
+    "name": "Bola Ocho Negroni Pisco",
+    "brand": "Bola Ocho",
+    "category": "Licor premium",
+    "subtype": "Cóctel listo para servir",
+    "volume": "500 ml",
+    "alcohol": "24% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Pisco",
+      "Herbal",
+      "Cítrico"
+    ],
+    "tags": [
+      "aperitivo",
+      "cocteleria",
+      "negroni",
+      "pisco"
+    ],
+    "description": "La personalidad aromática del pisco peruano se integra a un Negroni herbal, cítrico y contemporáneo.",
+    "badge": "",
+    "color": "#b07145",
+    "logo": "/images/logo-bolaocho.png",
+    "image": "/images/negroni-pisco.jpg"
+  },
+  {
+    "order": 6,
+    "slug": "bola-ocho-negroni-ron",
+    "name": "Bola Ocho Negroni Ron",
+    "brand": "Bola Ocho",
+    "category": "Licor premium",
+    "subtype": "Cóctel listo para servir",
+    "volume": "500 ml",
+    "alcohol": "24% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Ron",
+      "Dulce",
+      "Especiado"
+    ],
+    "tags": [
+      "aperitivo",
+      "cocteleria",
+      "negroni",
+      "ron"
+    ],
+    "description": "Una lectura cálida del Negroni, con la suavidad del ron y un final especiado de agradable persistencia.",
+    "badge": "",
+    "color": "#8c5136",
+    "logo": "/images/logo-bolaocho.png",
+    "image": "/images/negroni-ron.jpg"
+  },
+  {
+    "order": 7,
+    "slug": "soviet-vodka-original-1l",
+    "name": "Soviet Vodka Original 1 L",
+    "brand": "Soviet",
+    "category": "Vodka",
+    "subtype": "Vodka premium",
+    "volume": "1 L",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Puro",
+      "Cristalino",
+      "Versátil"
+    ],
+    "tags": [
+      "destilado",
+      "cocteleria",
+      "vodka",
+      "original"
+    ],
+    "description": "Vodka premium de perfil limpio y cristalino, versátil para servir frío o como base de coctelería.",
+    "badge": "Clásico",
+    "color": "#b9c9d1",
+    "logo": "/images/logo-soviet.png",
+    "image": "/images/soviet-vodka.jpg"
+  },
+  {
+    "order": 8,
+    "slug": "soviet-vodka-original-2l",
+    "name": "Soviet Vodka Original 2 L",
+    "brand": "Soviet",
+    "category": "Vodka",
+    "subtype": "Vodka premium",
+    "volume": "2 L",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Puro",
+      "Cristalino",
+      "Rendidor"
+    ],
+    "tags": [
+      "destilado",
+      "cocteleria",
+      "vodka",
+      "original"
+    ],
+    "description": "El perfil limpio de Soviet Original en una presentación de mayor rendimiento para reuniones y barras.",
+    "badge": "",
+    "color": "#aebfc8",
+    "logo": "/images/logo-soviet.png",
+    "image": "/images/soviet-vodka2l.jpg"
+  },
+  {
+    "order": 9,
+    "slug": "soviet-green-apple-1l",
+    "name": "Soviet Green Apple 1 L",
+    "brand": "Soviet",
+    "category": "Vodka",
+    "subtype": "Vodka saborizado",
+    "volume": "1 L",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Manzana verde",
+      "Fresco",
+      "Frutal"
+    ],
+    "tags": [
+      "destilado",
+      "cocteleria",
+      "vodka",
+      "frutal"
+    ],
+    "description": "Vodka de manzana verde con un perfil fresco y frutal que aporta vivacidad a cócteles y combinados.",
+    "badge": "",
+    "color": "#9cae63",
+    "logo": "/images/logo-soviet.png",
+    "image": "/images/soviet-greenapple.jpg"
+  },
+  {
+    "order": 10,
+    "slug": "soviet-green-apple-2l",
+    "name": "Soviet Green Apple 2 L",
+    "brand": "Soviet",
+    "category": "Vodka",
+    "subtype": "Vodka saborizado",
+    "volume": "2 L",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Manzana verde",
+      "Fresco",
+      "Rendidor"
+    ],
+    "tags": [
+      "destilado",
+      "cocteleria",
+      "vodka",
+      "frutal"
+    ],
+    "description": "El sabor fresco de manzana verde de Soviet en formato de 2 litros, pensado para compartir y mezclar.",
+    "badge": "",
+    "color": "#91a35a",
+    "logo": "/images/logo-soviet.png",
+    "image": "/images/soviet-greenapple2l.jpg"
+  },
+  {
+    "order": 11,
+    "slug": "el-mariachi-rubio",
+    "name": "El Mariachi Rubio",
+    "brand": "El Mariachi",
+    "category": "Licor",
+    "subtype": "Licor rubio",
+    "volume": "1 L",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Dorado",
+      "Intenso",
+      "Versátil"
+    ],
+    "tags": [
+      "destilado",
+      "cocteleria",
+      "licor"
+    ],
+    "description": "Licor rubio de color dorado y carácter intenso, creado para disfrutarse solo o en combinaciones de barra.",
+    "badge": "",
+    "color": "#c49349",
+    "logo": "/images/logo-mariachi.png",
+    "image": "/images/mariachi-rubio.jpg"
+  },
+  {
+    "order": 12,
+    "slug": "el-mariachi-blanco",
+    "name": "El Mariachi Blanco",
+    "brand": "El Mariachi",
+    "category": "Licor",
+    "subtype": "Licor blanco",
+    "volume": "1 L",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Cristalino",
+      "Limpio",
+      "Versátil"
+    ],
+    "tags": [
+      "destilado",
+      "cocteleria",
+      "licor"
+    ],
+    "description": "Licor blanco de apariencia cristalina y perfil limpio, ideal para servir frío o utilizar como una base versátil en coctelería.",
+    "badge": "Nuevo",
+    "color": "#aebec3",
+    "logo": "/images/logo-mariachi.png",
+    "image": "/images/mariachi-blanco.jpg"
+  },
+  {
+    "order": 13,
+    "slug": "mr-jigger-menta",
+    "name": "Mr. Jigger Menta",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor saborizado",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Menta",
+      "Fresco",
+      "Herbal"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "herbal",
+      "fresco"
+    ],
+    "description": "Licor de menta refrescante y herbal, ideal para cócteles vibrantes, digestivos y preparaciones de postre.",
+    "badge": "",
+    "color": "#4b846b",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-menta.jpg"
+  },
+  {
+    "order": 14,
+    "slug": "mr-jigger-triple-seco",
+    "name": "Mr. Jigger Triple Seco",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor cítrico",
+    "volume": "750 ml",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Naranja",
+      "Cítrico",
+      "Seco"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "citrico"
+    ],
+    "description": "Licor cítrico de naranja y final seco, indispensable para margaritas y clásicos de la coctelería.",
+    "badge": "Destacado",
+    "color": "#c67837",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-triplesec.jpg"
+  },
+  {
+    "order": 15,
+    "slug": "mr-jigger-blue-curacao",
+    "name": "Mr. Jigger Blue Curaçao",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor cítrico",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Naranja",
+      "Cítrico",
+      "Vibrante"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "citrico"
+    ],
+    "description": "Licor cítrico de intenso color azul que aporta notas de naranja y una presencia visual inconfundible.",
+    "badge": "",
+    "color": "#2782a8",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-curacao.jpg"
+  },
+  {
+    "order": 16,
+    "slug": "mr-jigger-amaretto",
+    "name": "Mr. Jigger Amaretto",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor saborizado",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Almendra",
+      "Dulce",
+      "Aromático"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "dulce",
+      "digestivo"
+    ],
+    "description": "Licor dulce y aromático con notas de almendra, perfecto para beber con hielo, mezclar o acompañar postres.",
+    "badge": "",
+    "color": "#9a603b",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-amaretto.jpg"
+  },
+  {
+    "order": 17,
+    "slug": "mr-jigger-sandia",
+    "name": "Mr. Jigger Sandía",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor frutal",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Sandía",
+      "Jugoso",
+      "Fresco"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "frutal",
+      "fresco"
+    ],
+    "description": "Licor frutal de sandía, jugoso y refrescante, pensado para mezclas ligeras y cócteles llenos de color.",
+    "badge": "",
+    "color": "#c75a62",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-sandia.jpg"
+  },
+  {
+    "order": 18,
+    "slug": "mr-jigger-frutos-rojos",
+    "name": "Mr. Jigger Frutos Rojos",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor frutal",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Frutos rojos",
+      "Dulce",
+      "Ácido"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "frutal"
+    ],
+    "description": "Una mezcla frutal de dulzor equilibrado y acidez vivaz para cócteles aromáticos y refrescantes.",
+    "badge": "",
+    "color": "#9f3f58",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-frutosrojos.jpg"
+  },
+  {
+    "order": 19,
+    "slug": "mr-jigger-fresa",
+    "name": "Mr. Jigger Fresa",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor frutal",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Fresa",
+      "Dulce",
+      "Frutal"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "frutal"
+    ],
+    "description": "Licor de fresa dulce y expresivo, una base versátil para bebidas cremosas, frozen y cócteles frutales.",
+    "badge": "",
+    "color": "#be4c55",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-fresa.JPG"
+  },
+  {
+    "order": 20,
+    "slug": "mr-jigger-durazno",
+    "name": "Mr. Jigger Durazno",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor frutal",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Durazno",
+      "Suave",
+      "Frutal"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "frutal"
+    ],
+    "description": "Licor de durazno suave y aromático que aporta dulzor frutal a combinados, spritzes y cócteles tropicales.",
+    "badge": "",
+    "color": "#cf8558",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-durazno.jpg"
+  },
+  {
+    "order": 21,
+    "slug": "mr-jigger-melon",
+    "name": "Mr. Jigger Melón",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor frutal",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Melón",
+      "Dulce",
+      "Fresco"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "frutal",
+      "fresco"
+    ],
+    "description": "Licor de melón de perfil dulce y fresco, ideal para mezclas tropicales y preparaciones de color vibrante.",
+    "badge": "",
+    "color": "#78a85d",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-melon.jpg"
+  },
+  {
+    "order": 22,
+    "slug": "mr-jigger-apple-sour",
+    "name": "Mr. Jigger Apple Sour",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor frutal",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Manzana",
+      "Ácido",
+      "Fresco"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "frutal",
+      "fresco"
+    ],
+    "description": "Licor de manzana con un toque ácido y refrescante, diseñado para cócteles jóvenes y equilibrados.",
+    "badge": "",
+    "color": "#8da64f",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-applesour.jpg"
+  },
+  {
+    "order": 23,
+    "slug": "mr-jigger-cafe",
+    "name": "Mr. Jigger Café",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor saborizado",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Café",
+      "Tostado",
+      "Dulce"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "cafe",
+      "digestivo"
+    ],
+    "description": "Licor de café con notas tostadas y dulces, perfecto para sobremesas, cócteles cremosos y bebidas calientes.",
+    "badge": "",
+    "color": "#65483c",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-cafe.jpg"
+  },
+  {
+    "order": 24,
+    "slug": "mr-jigger-cacao",
+    "name": "Mr. Jigger Cacao",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor saborizado",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Cacao",
+      "Dulce",
+      "Sedoso"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "dulce",
+      "digestivo"
+    ],
+    "description": "Licor de cacao dulce y sedoso, creado para coctelería de postre y combinaciones de perfil indulgente.",
+    "badge": "",
+    "color": "#76513c",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-cacao.jpg"
+  },
+  {
+    "order": 25,
+    "slug": "mr-jigger-neutro-cocteleria",
+    "name": "Mr. Jigger Neutro para Coctelería",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Base para coctelería",
+    "volume": "1 L",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Neutro",
+      "Versátil",
+      "Intenso"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "base"
+    ],
+    "description": "Una base neutra de alta graduación diseñada para maceraciones, mezclas y creaciones profesionales de barra.",
+    "badge": "",
+    "color": "#89969a",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-licor.jpg"
+  },
+  {
+    "order": 26,
+    "slug": "mr-jigger-banana",
+    "name": "Mr. Jigger Banana",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor frutal",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Banana",
+      "Tropical",
+      "Dulce"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "frutal",
+      "tropical"
+    ],
+    "description": "Licor tropical de banana con dulzor envolvente, ideal para frozen, cócteles cremosos y combinaciones exóticas.",
+    "badge": "",
+    "color": "#c0a345",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-banana.jpg"
+  },
+  {
+    "order": 27,
+    "slug": "mr-jigger-coco",
+    "name": "Mr. Jigger Coco",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Licor frutal",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Coco",
+      "Tropical",
+      "Cremoso"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "frutal",
+      "tropical"
+    ],
+    "description": "Licor de coco de perfil tropical y cremoso, perfecto para piñas coladas y mezclas refrescantes.",
+    "badge": "",
+    "color": "#c7b994",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-coco.jpg"
+  },
+  {
+    "order": 28,
+    "slug": "mr-jigger-bitter-amargo",
+    "name": "Mr. Jigger Bitter Amargo",
+    "brand": "Mr. Jigger",
+    "category": "Bitter",
+    "subtype": "Bitter aromático",
+    "volume": "75 ml",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Amargo",
+      "Aromático",
+      "Concentrado"
+    ],
+    "tags": [
+      "bitter",
+      "cocteleria",
+      "aromatico"
+    ],
+    "description": "Bitter aromático concentrado que añade profundidad, amargor y complejidad con unas pocas gotas.",
+    "badge": "",
+    "color": "#784a35",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-amargo.jpg"
+  },
+  {
+    "order": 29,
+    "slug": "mr-jigger-bitter-naranja",
+    "name": "Mr. Jigger Bitter Naranja",
+    "brand": "Mr. Jigger",
+    "category": "Bitter",
+    "subtype": "Bitter cítrico",
+    "volume": "75 ml",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Naranja",
+      "Amargo",
+      "Cítrico"
+    ],
+    "tags": [
+      "bitter",
+      "cocteleria",
+      "citrico"
+    ],
+    "description": "Bitter de naranja concentrado, con amargor cítrico para perfumar y equilibrar cócteles clásicos y modernos.",
+    "badge": "",
+    "color": "#b66a35",
+    "logo": "/images/logo-jigger.png",
+    "image": "/images/jigger-bitternaranja.jpg"
+  },
+  {
+    "order": 30,
+    "slug": "bandolero-jarabe-goma",
+    "name": "Bandolero Jarabe de Goma",
+    "brand": "Bandolero",
+    "category": "Jarabe",
+    "subtype": "Jarabe para coctelería",
+    "volume": "750 ml",
+    "alcohol": "Sin alcohol indicado",
+    "origin": "Perú",
+    "notes": [
+      "Dulce",
+      "Neutro",
+      "Versátil"
+    ],
+    "tags": [
+      "jarabe",
+      "cocteleria",
+      "mezclador"
+    ],
+    "description": "Jarabe de goma de dulzor uniforme, esencial para aportar textura y equilibrio a todo tipo de cócteles.",
+    "badge": "",
+    "color": "#b29a6d",
+    "logo": "/images/logo-bandolero.png",
+    "image": "/images/bandolero-goma.jpg"
+  },
+  {
+    "order": 31,
+    "slug": "bandolero-jarabe-granadina",
+    "name": "Bandolero Jarabe de Granadina",
+    "brand": "Bandolero",
+    "category": "Jarabe",
+    "subtype": "Jarabe para coctelería",
+    "volume": "750 ml",
+    "alcohol": "Sin alcohol indicado",
+    "origin": "Perú",
+    "notes": [
+      "Granadina",
+      "Dulce",
+      "Frutal"
+    ],
+    "tags": [
+      "jarabe",
+      "cocteleria",
+      "mezclador",
+      "frutal"
+    ],
+    "description": "Jarabe de granadina frutal y colorido, pensado para endulzar y dar una presentación vibrante a las bebidas.",
+    "badge": "",
+    "color": "#a63f46",
+    "logo": "/images/logo-bandolero.png",
+    "image": "/images/bandolero-granadina.jpg"
+  },
+  {
+    "order": 32,
+    "slug": "bandolero-bitter-amargo",
+    "name": "Bandolero Bitter Amargo",
+    "brand": "Bandolero",
+    "category": "Bitter",
+    "subtype": "Bitter aromático",
+    "volume": "75 ml",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Amargo",
+      "Aromático",
+      "Concentrado"
+    ],
+    "tags": [
+      "bitter",
+      "cocteleria",
+      "aromatico"
+    ],
+    "description": "Bitter amargo y aromático para aportar estructura, profundidad y un final complejo a los cócteles.",
+    "badge": "",
+    "color": "#7b4937",
+    "logo": "/images/logo-bandolero.png",
+    "image": "/images/bandolero-amargo.jpg"
+  },
+  {
+    "order": 33,
+    "slug": "bandolero-macerado-anis",
+    "name": "Bandolero Macerado de Anís",
+    "brand": "Bandolero",
+    "category": "Licor",
+    "subtype": "Licor macerado",
+    "volume": "750 ml",
+    "alcohol": "20% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Anís",
+      "Herbal",
+      "Aromático"
+    ],
+    "tags": [
+      "licor",
+      "macerado",
+      "herbal",
+      "digestivo"
+    ],
+    "description": "Licor macerado de anís con un perfil herbal y aromático, de paso amable y final persistentemente especiado.",
+    "badge": "",
+    "color": "#8f7658",
+    "logo": "/images/logo-bandolero.png",
+    "image": "/images/bandolero-anis.jpg"
+  },
+  {
+    "order": 34,
+    "slug": "bandolero-licor-coca",
+    "name": "Bandolero Licor de Coca",
+    "brand": "Bandolero",
+    "category": "Licor",
+    "subtype": "Licor herbal",
+    "volume": "750 ml",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Coca",
+      "Herbal",
+      "Intenso"
+    ],
+    "tags": [
+      "licor",
+      "herbal",
+      "digestivo"
+    ],
+    "description": "Licor de coca de marcado carácter herbal e intensidad aromática, inspirado en un ingrediente emblemático del Perú.",
+    "badge": "",
+    "color": "#64744e",
+    "logo": "/images/logo-bandolero.png",
+    "image": "/images/bandolero-coca.jpg"
+  }
 ]
