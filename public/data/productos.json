@@ -75,7 +75,7 @@
     "badge": "",
     "color": "#594137",
     "logo": "/images/logo-bolaocho.png",
-    "image": "/images/bolaocho-martini1.png"
+    "image": "/images/bolaocho-martini.png"
   },
   {
     "order": 4,
@@ -102,7 +102,7 @@
     "badge": "",
     "color": "#695548",
     "logo": "/images/logo-bolaocho.png",
-    "image": "/images/negroni-mezcal.jpg"
+    "image": "/images/negroni-mezcal.png"
   },
   {
     "order": 5,
