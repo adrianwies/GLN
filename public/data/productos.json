@@ -129,7 +129,7 @@
     "badge": "",
     "color": "#b07145",
     "logo": "/images/logo-bolaocho.png",
-    "image": "/images/negroni-pisco.jpg"
+    "image": "/images/negroni-pisco.png"
   },
   {
     "order": 6,
@@ -156,7 +156,7 @@
     "badge": "",
     "color": "#8c5136",
     "logo": "/images/logo-bolaocho.png",
-    "image": "/images/negroni-ron.jpg"
+    "image": "/images/negroni-ron.png"
   },
   {
     "order": 7,
@@ -183,7 +183,7 @@
     "badge": "Clásico",
     "color": "#b9c9d1",
     "logo": "/images/logo-soviet.png",
-    "image": "/images/soviet-vodka.jpg"
+    "image": "/images/soviet-vodka.png"
   },
   {
     "order": 8,
