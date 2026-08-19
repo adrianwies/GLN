@@ -210,7 +210,7 @@
     "badge": "",
     "color": "#aebfc8",
     "logo": "/images/logo-soviet.png",
-    "image": "/images/soviet-vodka2l.jpg"
+    "image": "/images/soviet-vodka2l.png"
   },
   {
     "order": 9,
@@ -237,7 +237,7 @@
     "badge": "",
     "color": "#9cae63",
     "logo": "/images/logo-soviet.png",
-    "image": "/images/soviet-greenapple.jpg"
+    "image": "/images/soviet-greenapple.png"
   },
   {
     "order": 10,
@@ -264,7 +264,7 @@
     "badge": "",
     "color": "#91a35a",
     "logo": "/images/logo-soviet.png",
-    "image": "/images/soviet-greenapple2l.jpg"
+    "image": "/images/soviet-greenapple2l.png"
   },
   {
     "order": 11,
@@ -343,7 +343,7 @@
     "badge": "",
     "color": "#4b846b",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-menta.jpg"
+    "image": "/images/jigger-menta.png"
   },
   {
     "order": 14,
@@ -369,7 +369,7 @@
     "badge": "Destacado",
     "color": "#c67837",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-triplesec.jpg"
+    "image": "/images/jigger-triplesec.png"
   },
   {
     "order": 15,
@@ -395,7 +395,7 @@
     "badge": "",
     "color": "#2782a8",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-curacao.jpg"
+    "image": "/images/jigger-curacao.png"
   },
   {
     "order": 16,
@@ -422,7 +422,7 @@
     "badge": "",
     "color": "#9a603b",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-amaretto.jpg"
+    "image": "/images/jigger-amaretto.png"
   },
   {
     "order": 17,
@@ -449,7 +449,7 @@
     "badge": "",
     "color": "#c75a62",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-sandia.jpg"
+    "image": "/images/jigger-sandia.png"
   },
   {
     "order": 18,
@@ -475,7 +475,7 @@
     "badge": "",
     "color": "#9f3f58",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-frutosrojos.jpg"
+    "image": "/images/jigger-frutosrojos.png"
   },
   {
     "order": 19,
@@ -501,7 +501,7 @@
     "badge": "",
     "color": "#be4c55",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-fresa.JPG"
+    "image": "/images/jigger-fresa.png"
   },
   {
     "order": 20,
@@ -527,7 +527,7 @@
     "badge": "",
     "color": "#cf8558",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-durazno.jpg"
+    "image": "/images/jigger-durazno.png"
   },
   {
     "order": 21,
@@ -554,7 +554,7 @@
     "badge": "",
     "color": "#78a85d",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-melon.jpg"
+    "image": "/images/jigger-melon.png"
   },
   {
     "order": 22,
@@ -581,7 +581,7 @@
     "badge": "",
     "color": "#8da64f",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-applesour.jpg"
+    "image": "/images/jigger-applesour.png"
   },
   {
     "order": 23,
@@ -608,7 +608,7 @@
     "badge": "",
     "color": "#65483c",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-cafe.jpg"
+    "image": "/images/jigger-cafe.png"
   },
   {
     "order": 24,
@@ -635,7 +635,7 @@
     "badge": "",
     "color": "#76513c",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-cacao.jpg"
+    "image": "/images/jigger-cacao.png"
   },
   {
     "order": 25,
@@ -661,7 +661,7 @@
     "badge": "",
     "color": "#89969a",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-licor.jpg"
+    "image": "/images/jigger-licor.png"
   },
   {
     "order": 26,
@@ -688,7 +688,7 @@
     "badge": "",
     "color": "#c0a345",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-banana.jpg"
+    "image": "/images/jigger-banana.png"
   },
   {
     "order": 27,
