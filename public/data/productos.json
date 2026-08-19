@@ -741,7 +741,7 @@
     "badge": "",
     "color": "#784a35",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-amargo.jpg"
+    "image": "/images/jigger-amargo.png"
   },
   {
     "order": 29,
@@ -767,7 +767,7 @@
     "badge": "",
     "color": "#b66a35",
     "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-bitternaranja.jpg"
+    "image": "/images/jigger-bitternaranja.png"
   },
   {
     "order": 30,
@@ -793,7 +793,7 @@
     "badge": "",
     "color": "#b29a6d",
     "logo": "/images/logo-bandolero.png",
-    "image": "/images/bandolero-goma.jpg"
+    "image": "/images/bandolero-goma.png"
   },
   {
     "order": 31,
@@ -820,7 +820,7 @@
     "badge": "",
     "color": "#a63f46",
     "logo": "/images/logo-bandolero.png",
-    "image": "/images/bandolero-granadina.jpg"
+    "image": "/images/bandolero-granadina.png"
   },
   {
     "order": 32,
@@ -846,7 +846,7 @@
     "badge": "",
     "color": "#7b4937",
     "logo": "/images/logo-bandolero.png",
-    "image": "/images/bandolero-amargo.jpg"
+    "image": "/images/bandolero-amargo.png"
   },
   {
     "order": 33,
@@ -873,7 +873,7 @@
     "badge": "",
     "color": "#8f7658",
     "logo": "/images/logo-bandolero.png",
-    "image": "/images/bandolero-anis.jpg"
+    "image": "/images/bandolero-anis.png"
   },
   {
     "order": 34,
@@ -899,6 +899,6 @@
     "badge": "",
     "color": "#64744e",
     "logo": "/images/logo-bandolero.png",
-    "image": "/images/bandolero-coca.jpg"
+    "image": "/images/bandolero-coca.png"
   }
 ]
