@@ -108,9 +108,12 @@ const previousProductButton = document.querySelector('.carousel-arrow--prev')
 const nextProductButton = document.querySelector('.carousel-arrow--next')
 
 const toggleProductView = (direction) => {
-  const destination = direction > 0 ? carouselEnd() : 0
-  productCarousel.scrollTo({
-    left: destination,
+  const firstCard = productCarousel.querySelector('.card')
+  const styles = getComputedStyle(productCarousel)
+  const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0
+
+  productCarousel.scrollBy({
+    left: direction * (firstCard.offsetWidth + gap),
     behavior: 'smooth',
   })
 }
