@@ -31,19 +31,28 @@ if (component) {
   const isCatalogPage = window.location.pathname.startsWith('/catalogo')
   const isAboutPage = window.location.pathname.startsWith('/nosotros')
   const isContactPage = window.location.pathname.startsWith('/contacto')
+  const isFaqPage = window.location.pathname.startsWith('/preguntas-frecuentes')
+  const isTermsPage = window.location.pathname.startsWith('/terminos-y-condiciones')
+  const isClaimsPage = window.location.pathname.startsWith('/libro-de-reclamaciones')
   const activePage = isCatalogPage
     ? 'catalogo'
     : isAboutPage
       ? 'nosotros'
       : isContactPage
         ? 'contacto'
-        : 'inicio'
+        : isFaqPage
+          ? 'preguntas-frecuentes'
+          : isTermsPage
+            ? 'terminos-y-condiciones'
+            : isClaimsPage
+              ? 'libro-de-reclamaciones'
+              : 'inicio'
 
   component
     .querySelector('[data-page="' + activePage + '"]')
     ?.classList.add('page-active')
 
-  if (isCatalogPage || isAboutPage || isContactPage) {
+  if (isCatalogPage || isAboutPage || isContactPage || isFaqPage || isTermsPage || isClaimsPage) {
     header.classList.add('solid')
     explore.href = '#carrito'
   } else {

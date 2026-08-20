@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es-PE">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Libro de Reclamaciones Virtual de Grupo de Licores Nacionales S.A.C. para registrar reclamos o quejas de consumo en Perú." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#092938" />
+  <meta property="og:locale" content="es_PE" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Libro de Reclamaciones | GLN Perú" />
+  <meta property="og:description"
+    content="Registra una queja o reclamo relacionado con los productos y la atención de Grupo de Licores Nacionales." />
+  <meta property="og:image" content="/images/LogoGLN.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="/images/gln-icon.png" />
+  <title>Libro de Reclamaciones Virtual | GLN Perú</title>
+</head>
+
+<body>
+  <!-- HEADER_COMPONENT -->
+  <main>
+    <section class="claims-hero">
+      <div class="claims-hero__identity reveal">
+        <img src="/images/LogoGLN.png" alt="Grupo de Licores Nacionales" />
+        <h1>Libro de Reclamaciones</h1>
+        <dl>
+          <div>
+            <dt>RUC</dt>
+            <dd>20601535891</dd>
+          </div>
+          <div>
+            <dt>Razón Social</dt>
+            <dd>GRUPO DE LICORES NACIONALES S.A.C.</dd>
+          </div>
+        </dl>
+        <address>Jr. Talara 193, Zona Industrial, San Juan de Miraflores, Lima</address>
+      </div>
+    </section>
+
+    <section class="claim-shell">
+      <header class="claim-heading reveal">
+        <div>
+          <p class="tag">Atención al consumidor</p>
+          <h2>Hoja de reclamación</h2>
+        </div>
+        <div class="claim-heading__meta"><span>Fecha</span><strong data-claim-date></strong><span>Hoja N.º</span><strong
+            data-claim-number></strong></div>
+      </header>
+
+      <p class="claim-guidance reveal">Completa los campos obligatorios para preparar tu reclamo o queja. GLN deberá
+        responder por escrito en un plazo máximo de 15 días hábiles.</p>
+
+      <form class="claim-form reveal" data-claim-form novalidate>
+        <fieldset>
+          <legend><span>01</span>Identificación del consumidor reclamante</legend>
+          <div class="field-grid">
+            <label class="field field--wide"><span>Nombres y apellidos <b>*</b></span><input name="nombre"
+                autocomplete="name" required /></label>
+            <label class="field"><span>Tipo de documento <b>*</b></span><select name="tipoDocumento" required>
+                <option value="">Selecciona</option>
+                <option>DNI</option>
+                <option>CE</option>
+                <option>Pasaporte</option>
+              </select></label>
+            <label class="field"><span>Número de documento <b>*</b></span><input name="documento" inputmode="numeric"
+                required /></label>
+            <label class="field"><span>Teléfono <b>*</b></span><input name="telefono" type="tel" autocomplete="tel"
+                required /></label>
+            <label class="field"><span>Correo electrónico <b>*</b></span><input name="correo" type="email"
+                autocomplete="email" required /></label>
+            <label class="field field--full"><span>Domicilio <b>*</b></span><input name="domicilio"
+                autocomplete="street-address" required /></label>
+            <label class="field field--full"><span>Padre, madre o representante <small>(si el consumidor es menor de
+                  edad)</small></span><input name="representante" /></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>02</span>Identificación del bien contratado</legend>
+          <div class="choice-row" role="radiogroup" aria-label="Tipo de bien contratado">
+            <label><input type="radio" name="bien" value="Producto" required /><span>Producto</span></label>
+            <label><input type="radio" name="bien" value="Servicio" required /><span>Servicio</span></label>
+          </div>
+          <div class="field-grid">
+            <label class="field"><span>Monto reclamado <small>(S/)</small></span><input name="monto" type="number"
+                min="0" step="0.01" inputmode="decimal" /></label>
+            <label class="field"><span>Fecha de compra o atención</span><input name="fechaCompra" type="date" /></label>
+            <label class="field field--full"><span>Descripción del producto o servicio <b>*</b></span><textarea
+                name="descripcion" rows="3" required></textarea></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>03</span>Detalle de la reclamación y pedido</legend>
+          <div class="claim-kind">
+            <label><input type="radio" name="tipo" value="Reclamo"
+                required /><span><strong>Reclamo</strong><small>Disconformidad relacionada con un producto o
+                  servicio.</small></span></label>
+            <label><input type="radio" name="tipo" value="Queja" required /><span><strong>Queja</strong><small>Malestar
+                  relacionado con la atención al público.</small></span></label>
+          </div>
+          <div class="field-grid">
+            <label class="field field--full"><span>Detalle del reclamo o queja <b>*</b></span><textarea name="detalle"
+                rows="6" maxlength="3000" required></textarea><small class="counter"><output
+                  data-detail-count>0</output>/3000</small></label>
+            <label class="field field--full"><span>Pedido concreto del consumidor <b>*</b></span><textarea name="pedido"
+                rows="4" maxlength="1500" required></textarea><small class="counter"><output
+                  data-request-count>0</output>/1500</small></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="claim-consent">
+          <legend><span>04</span>Declaración y envío</legend>
+          <label class="check-field"><input type="checkbox" name="declaracion" required /><span>Declaro que la
+              información proporcionada es verdadera y autorizo su tratamiento para atender esta hoja de reclamación,
+              conforme a la normativa peruana de protección de datos personales. <b>*</b></span></label>
+          <p>La presentación de esta hoja no impide acudir a otras vías de solución de controversias ni constituye un
+            requisito previo para presentar una denuncia ante el Indecopi.</p>
+        </fieldset>
+
+        <div class="claim-actions">
+          <button class="claim-submit" type="submit">Preparar hoja de reclamación <span>↗</span></button>
+          <button class="claim-print" type="button" data-print disabled>Imprimir copia</button>
+        </div>
+        <output class="claim-status" data-claim-status aria-live="polite"></output>
+      </form>
+    </section>
+  </main>
+  <!-- FOOTER_COMPONENT -->
+  <!-- CART_COMPONENT -->
+  <script type="module" src="/libro-de-reclamaciones/libro-de-reclamaciones.js"></script>
+</body>
+
+</html>

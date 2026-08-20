@@ -2,7 +2,7 @@ import './cart-drawer.css'
 import { formatPrice, readCart, setCartQuantity } from './cart-store.js'
 
 const drawer = document.querySelector('[data-cart-drawer]')
-const WHATSAPP_NUMBER = '51908946740'
+const WHATSAPP_NUMBER = '51960687318'
 
 if (drawer) {
   const backdrop = document.querySelector('[data-cart-backdrop]')

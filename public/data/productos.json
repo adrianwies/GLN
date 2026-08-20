@@ -290,7 +290,7 @@
     "badge": "",
     "color": "#c49349",
     "logo": "/images/logo-mariachi.png",
-    "image": "/images/mariachi-rubio.jpg"
+    "image": "/images/mariachi-rubio.png"
   },
   {
     "order": 12,
@@ -316,7 +316,7 @@
     "badge": "Nuevo",
     "color": "#aebec3",
     "logo": "/images/logo-mariachi.png",
-    "image": "/images/mariachi-blanco.jpg"
+    "image": "/images/mariachi-blanco.png"
   },
   {
     "order": 13,
@@ -530,7 +530,7 @@
     "image": "/images/jigger-durazno.png"
   },
   {
-    "order": 21,
+    "order": 23,
     "slug": "mr-jigger-melon",
     "name": "Mr. Jigger Melón",
     "brand": "Mr. Jigger",
@@ -557,7 +557,7 @@
     "image": "/images/jigger-melon.png"
   },
   {
-    "order": 22,
+    "order": 24,
     "slug": "mr-jigger-apple-sour",
     "name": "Mr. Jigger Apple Sour",
     "brand": "Mr. Jigger",
@@ -584,7 +584,7 @@
     "image": "/images/jigger-applesour.png"
   },
   {
-    "order": 23,
+    "order": 25,
     "slug": "mr-jigger-cafe",
     "name": "Mr. Jigger Café",
     "brand": "Mr. Jigger",
@@ -611,7 +611,7 @@
     "image": "/images/jigger-cafe.png"
   },
   {
-    "order": 24,
+    "order": 26,
     "slug": "mr-jigger-cacao",
     "name": "Mr. Jigger Cacao",
     "brand": "Mr. Jigger",
@@ -638,7 +638,7 @@
     "image": "/images/jigger-cacao.png"
   },
   {
-    "order": 25,
+    "order": 27,
     "slug": "mr-jigger-neutro-cocteleria",
     "name": "Mr. Jigger Neutro para Coctelería",
     "brand": "Mr. Jigger",
@@ -664,7 +664,7 @@
     "image": "/images/jigger-licor.png"
   },
   {
-    "order": 26,
+    "order": 22,
     "slug": "mr-jigger-banana",
     "name": "Mr. Jigger Banana",
     "brand": "Mr. Jigger",
@@ -691,7 +691,7 @@
     "image": "/images/jigger-banana.png"
   },
   {
-    "order": 27,
+    "order": 21,
     "slug": "mr-jigger-coco",
     "name": "Mr. Jigger Coco",
     "brand": "Mr. Jigger",
@@ -770,7 +770,7 @@
     "image": "/images/jigger-bitternaranja.png"
   },
   {
-    "order": 30,
+    "order": 31,
     "slug": "bandolero-jarabe-goma",
     "name": "Bandolero Jarabe de Goma",
     "brand": "Bandolero",
@@ -796,7 +796,7 @@
     "image": "/images/bandolero-goma.png"
   },
   {
-    "order": 31,
+    "order": 32,
     "slug": "bandolero-jarabe-granadina",
     "name": "Bandolero Jarabe de Granadina",
     "brand": "Bandolero",
@@ -823,7 +823,7 @@
     "image": "/images/bandolero-granadina.png"
   },
   {
-    "order": 32,
+    "order": 30,
     "slug": "bandolero-bitter-amargo",
     "name": "Bandolero Bitter Amargo",
     "brand": "Bandolero",

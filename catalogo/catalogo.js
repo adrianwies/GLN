@@ -118,10 +118,10 @@ setupMobileFilters()
 
 function startBrandStream() {
   document.querySelectorAll('.brand-lane').forEach((lane, index) => {
-    const duration = 48 + index * 5 + Math.random() * 2
+    const duration = 50 + index * 5
     const controlledOffsets = [-7, -24, -39]
     lane.style.setProperty('--duration', `${duration}s`)
-    lane.style.setProperty('--delay', `${controlledOffsets[index] - Math.random() * 1.5}s`)
+    lane.style.setProperty('--delay', `${controlledOffsets[index]}s`)
   })
 }
 

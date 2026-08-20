@@ -185,3 +185,10 @@ body.catalog-tools-stuck:before{content:'';position:fixed;z-index:9;left:0;right
     height:54px;
   }
 }
+
+/* Mismo tratamiento blanco de carousel-brand-mark en Inicio. */
+.brand-stream .brand-track .bandolero{filter:invert(1) grayscale(1) contrast(1.35) drop-shadow(0 3px 7px rgba(3,28,41,.7));mix-blend-mode:screen;opacity:.96}
+
+/* Bucle continuo: el padding completa exactamente las dos mitades del track. */
+.brand-stream .brand-track{box-sizing:content-box;padding-right:var(--track-gap)}
+@keyframes lane-flow{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
