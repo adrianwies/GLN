@@ -11,14 +11,27 @@ const pathParts = window.location.pathname.split('/').filter(Boolean)
 const slug = pathParts[0] === 'catalogo' && pathParts[1] === 'producto' ? pathParts[2] : new URLSearchParams(location.search).get('slug')
 
 function updateMetadata(product) {
-  const description = `${product.name}, ${product.category} de ${product.brand}. Perfil ${product.notes.join(', ')}. Conoce la selección de GLN.`
-  document.title = `${product.name} | GLN`
+  const description = `${product.name} de ${product.brand}: ${product.description} Presentación ${product.volume}. Consulta disponibilidad en Perú.`
+  const title = `${product.name} ${product.volume} | GLN Perú`
+  const url = `https://gln.com.pe/catalogo/producto/${product.slug}/`
+  const image = new URL(product.image, 'https://gln.com.pe').href
+  document.title = title
   document.querySelector('meta[name="description"]').content = description
-  document.querySelector('link[rel="canonical"]').href = `${location.origin}/catalogo/producto/${product.slug}`
-  const schema = document.createElement('script')
-  schema.type = 'application/ld+json'
-  schema.textContent = JSON.stringify({ '@context':'https://schema.org', '@type':'Product', name:product.name, description:product.description, image:[product.image], brand:{'@type':'Brand',name:product.brand}, category:product.category, countryOfOrigin:product.origin, sku:product.slug, offers:{'@type':'Offer',priceCurrency:'PEN',price:product.price} })
-  document.head.appendChild(schema)
+  document.querySelector('link[rel="canonical"]').href = url
+  const setMeta = (selector, attribute, content) => document.querySelector(selector)?.setAttribute(attribute, content)
+  setMeta('meta[property="og:title"]', 'content', title)
+  setMeta('meta[property="og:description"]', 'content', description)
+  setMeta('meta[property="og:url"]', 'content', url)
+  setMeta('meta[property="og:image"]', 'content', image)
+  setMeta('meta[name="twitter:title"]', 'content', title)
+  setMeta('meta[name="twitter:description"]', 'content', description)
+  setMeta('meta[name="twitter:image"]', 'content', image)
+  if (!document.querySelector('script[type="application/ld+json"]')) {
+    const schema = document.createElement('script')
+    schema.type = 'application/ld+json'
+    schema.textContent = JSON.stringify({ '@context':'https://schema.org', '@type':'Product', name:product.name, description:product.description, image:[image], brand:{'@type':'Brand',name:product.brand}, category:product.category, countryOfOrigin:{'@type':'Country',name:product.origin}, sku:product.slug })
+    document.head.appendChild(schema)
+  }
 }
 
 function relatedProducts(product, products) {
@@ -81,6 +94,7 @@ async function init() {
     const product = products.find((item) => item.slug === slug)
     if (!product) {
       document.title = 'Producto no encontrado | GLN'
+      document.querySelector('meta[name="robots"]').content = 'noindex, follow'
       page.innerHTML = '<section class="not-found"><span>404</span><h1>Producto no encontrado</h1><p>La botella que buscas no está disponible en nuestro catálogo.</p><a href="/catalogo/">Volver al catálogo</a></section>'
       return
     }

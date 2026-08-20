@@ -5,7 +5,7 @@ const templateHost = document.createElement('div')
 templateHost.innerHTML = productCardMarkup
 const productCardTemplate = templateHost.querySelector('#product-card-template')
 
-export const productUrl = (product) => `/catalogo/producto/${product.slug}`
+export const productUrl = (product) => `/catalogo/producto/${product.slug}/`
 
 export function renderProductCard(product, options = {}) {
   const { quantity = 0, index = 0 } = options

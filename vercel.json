@@ -3,10 +3,11 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/catalogo/producto/:slug",
-      "destination": "/catalogo/producto/index.html"
+      "source": "/productos/",
+      "destination": "/catalogo/",
+      "permanent": true
     }
   ]
 }
