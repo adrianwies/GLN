@@ -223,3 +223,16 @@
 @media(max-width:1100px) and (min-width:851px){.product-detail{grid-template-columns:minmax(0,1fr) minmax(340px,.9fr)}.detail-visual{height:470px}.detail-copy{padding:28px}.related-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:850px){.product-page{padding:calc(var(--header-height) + 18px) 20px 45px}.product-detail{grid-template-columns:1fr}.detail-visual{height:clamp(320px,58vw,440px)}.detail-copy{padding:34px 26px}.related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:550px){.product-page{padding:calc(var(--header-height) + 16px) 14px 36px}.detail-visual{height:clamp(270px,78vw,360px)}.detail-logo{left:18px;bottom:15px;width:110px}.detail-copy{padding:27px 19px}.detail-copy h1{font-size:clamp(2.25rem,12vw,3.2rem)}.detail-purchase{flex-direction:column;align-items:stretch}.quantity-control{align-self:flex-start}.specifications{grid-template-columns:1fr}.specifications div:nth-child(odd){border-right:0}.specifications div:nth-child(even){padding-left:0}.related-head h2{font-size:2rem}.related-head>a{display:none}.related-grid{grid-template-columns:1fr}.related-card>div{height:clamp(250px,80vw,360px)}}
+
+/* La fotografía cubre toda la columna, incluso cuando el contenido define una fila más alta. */
+@media(min-width:851px){
+    .product-detail{align-items:stretch}
+    .detail-visual{height:auto;min-height:510px;align-self:stretch}
+}
+@media(max-width:1100px) and (min-width:851px){.detail-visual{min-height:470px}}
+@media(min-width:1600px){.detail-visual{min-height:600px}}
+
+/* Marcas sobre fotografía: blancas, con las excepciones visuales aprobadas. */
+.detail-logo{filter:brightness(0) invert(1) drop-shadow(0 3px 7px rgba(0,0,0,.55))}
+.detail-logo[data-brand="Soviet"]{filter:none}
+.detail-logo[data-brand="Bandolero"]{filter:invert(1) grayscale(1) contrast(1.35) drop-shadow(0 3px 7px rgba(3,28,41,.7));mix-blend-mode:screen;opacity:.96}

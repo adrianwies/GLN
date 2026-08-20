@@ -265,4 +265,9 @@
 .product-price{display:block;margin-top:8px;color:var(--color-primary);font-size:.86rem;font-weight:600}.add-button.selected b::before{content:none}
 @media(max-width:1100px){.product-meta{padding-right:94px}.add-button{right:2px}}
 @media(max-width:650px){.product-meta{min-height:92px;padding:14px 104px 16px 2px}.product-meta h3{font-size:1.1rem}.add-button{right:0;bottom:15px}.brand-logo{max-width:100px}}
+
+/* Contraste uniforme de los logos en las fotografías del catálogo. */
+.brand-logo{filter:brightness(0) invert(1) drop-shadow(0 3px 7px rgba(0,0,0,.55))}
+.brand-logo[data-brand="Soviet"]{filter:none}
+.brand-logo[data-brand="Bandolero"]{filter:invert(1) grayscale(1) contrast(1.35) drop-shadow(0 3px 7px rgba(3,28,41,.7));mix-blend-mode:screen;opacity:.96}
 @media(max-width:380px){.product-meta{padding-right:0;padding-bottom:60px}.add-button{left:0;right:auto;bottom:14px}}
