@@ -137,7 +137,7 @@ setupInterestSelect(interestSelect)
 
 const EMAILJS_SERVICE_ID = 'service_sjzvecr'
 const EMAILJS_TEMPLATE_ID = 'template_zr78hq4'
-const EMAILJS_PUBLIC_KEY = 'BA6c_KJbqOFJ12iBBxzp8'
+const EMAILJS_PUBLIC_KEY = 'sCOc-2AMwExocz_Bw'
 
 form?.addEventListener('submit', async (event) => {
   event.preventDefault()
