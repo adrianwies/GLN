@@ -24,7 +24,9 @@
   --space-section:clamp(4.5rem,7vw,6.5rem);
   --space-page:clamp(1.5rem,6vw,6rem);
   --content-max:1440px;
-  --header-height:92px;
+  --nav-height:92px;
+  --delivery-banner-height:38px;
+  --header-height:calc(var(--nav-height) + var(--delivery-banner-height));
   --radius-round:999px;
 
   --blue:var(--color-primary);
@@ -202,3 +204,7 @@ html{overflow-x:hidden;-webkit-text-size-adjust:100%}body{overflow-x:clip}main,s
 @media(max-width:1100px){:root{--space-page:clamp(1.5rem,4vw,3.5rem);--space-section:clamp(4rem,7vw,5.5rem)}}
 @media(max-width:850px){:root{--header-height:78px;--text-section:clamp(2.25rem,7vw,3.5rem);--space-section:clamp(3.5rem,8vw,4.75rem)}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card,.card:nth-child(4),.card:nth-child(5){grid-column:auto}.pic{height:clamp(300px,52vw,430px)}}
 @media(max-width:520px){:root{--header-height:70px;--space-page:20px;--space-section:3.25rem;--text-body:.86rem}.grid{grid-template-columns:1fr;gap:24px}.pic{height:clamp(300px,92vw,440px)}.info{gap:16px}.info span{text-align:right}}
+
+/* Altura combinada de la barra de delivery y la navegacion fija. */
+@media(max-width:850px){:root{--nav-height:78px;--header-height:calc(var(--nav-height) + var(--delivery-banner-height))}}
+@media(max-width:520px){:root{--nav-height:70px;--delivery-banner-height:36px;--header-height:calc(var(--nav-height) + var(--delivery-banner-height))}}

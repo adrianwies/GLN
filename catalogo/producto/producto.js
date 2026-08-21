@@ -29,7 +29,8 @@ function updateMetadata(product) {
   if (!document.querySelector('script[type="application/ld+json"]')) {
     const schema = document.createElement('script')
     schema.type = 'application/ld+json'
-    schema.textContent = JSON.stringify({ '@context':'https://schema.org', '@type':'Product', name:product.name, description:product.description, image:[image], brand:{'@type':'Brand',name:product.brand}, category:product.category, countryOfOrigin:{'@type':'Country',name:product.origin}, sku:product.slug })
+    const price = Number(product.price)
+    schema.textContent = JSON.stringify({ '@context':'https://schema.org', '@type':'Product', name:product.name, description:product.description, image:[image], brand:{'@type':'Brand',name:product.brand}, category:product.category, countryOfOrigin:{'@type':'Country',name:product.origin}, sku:String(product.id), productID:product.slug, ...(price > 0 ? { offers:{'@type':'Offer',url,price:price.toFixed(2),priceCurrency:'PEN'} } : {}) })
     document.head.appendChild(schema)
   }
 }
@@ -49,10 +50,10 @@ function render(product, products) {
   document.querySelectorAll('[data-name]').forEach((element) => { element.textContent = product.name })
   document.querySelector('[data-kicker]').textContent = `${product.category} · ${product.volume}`
   document.querySelector('[data-description]').textContent = product.description
-  document.querySelector('[data-price]').textContent = formatPrice(product.price)
+  document.querySelector('[data-price]').textContent = Number(product.price) > 0 ? formatPrice(product.price) : 'Consultar precio'
   document.querySelector('[data-notes]').innerHTML = product.notes.map((note) => `<span>${note}</span>`).join('')
   document.querySelector('[data-notes]').insertAdjacentHTML('afterend', `<dl class="specifications"><div><dt>Tipo</dt><dd>${product.subtype}</dd></div><div><dt>Contenido</dt><dd>${product.volume}</dd></div><div><dt>Alcohol</dt><dd>${product.alcohol}</dd></div><div><dt>Origen</dt><dd>${product.origin}</dd></div></dl>`)
-  const photo = document.querySelector('[data-photo]'); photo.src = product.image; photo.alt = product.name
+  const photo = document.querySelector('[data-photo]'); photo.src = product.image; photo.alt = product.name; photo.fetchPriority = 'high'; photo.decoding = 'async'
   const logo = document.querySelector('[data-logo]'); logo.src = product.logo; logo.alt = product.brand; logo.dataset.brand = product.brand
   const addButton = document.querySelector('[data-add]'); addButton.disabled = false
   const output = document.querySelector('[data-detail-quantity]')

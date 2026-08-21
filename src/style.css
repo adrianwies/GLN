@@ -1736,7 +1736,7 @@ body .products .product-carousel > article.card .info{
   bottom:-190px;
   width:clamp(380px,36vw,580px);
   aspect-ratio:2/3;
-  background:url('/images/fondoparati.png') center/contain no-repeat;
+  background:url('/images/fondoparati.webp') center/contain no-repeat;
   transform:rotate(-13deg);
   filter:drop-shadow(28px 30px 36px rgba(0,0,0,.3));
   pointer-events:none;

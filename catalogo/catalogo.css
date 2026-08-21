@@ -26,7 +26,7 @@ body{overflow-x:hidden}.catalog-hero{min-height:620px;padding:calc(var(--header-
 
 
 /* Isotipo GLN como marca de agua detrás de las marcas en movimiento. */
-.catalog-hero:after{z-index:0;right:clamp(-35px,3vw,45px);top:50%;width:clamp(300px,34vw,470px);height:clamp(300px,34vw,470px);border:0;background:url('/images/gln-icon.png') center/contain no-repeat;opacity:.075;filter:grayscale(1) contrast(1.15);mix-blend-mode:screen;transform:translateY(-50%);pointer-events:none}
+.catalog-hero:after{z-index:0;right:clamp(-35px,3vw,45px);top:50%;width:clamp(300px,34vw,470px);height:clamp(300px,34vw,470px);border:0;background:url('/images/gln-icon.webp') center/contain no-repeat;opacity:.075;filter:grayscale(1) contrast(1.15);mix-blend-mode:screen;transform:translateY(-50%);pointer-events:none}
 
 
 

@@ -28,6 +28,8 @@ let dragging = false
 let dragStartX = 0
 let initialScroll = 0
 let activePointerId = null
+let carouselDragMoved = false
+let pendingBrandLink = null
 
 productCarousel.scrollLeft = 0
 
@@ -51,23 +53,33 @@ const updateCarouselDots = () => {
 productCarousel.addEventListener('pointerdown', (event) => {
   if (event.pointerType !== 'mouse') return
   dragging = true
+  pendingBrandLink = event.target.closest('.brand-image-link, .brand-name-link')
   activePointerId = event.pointerId
   dragStartX = event.clientX
   initialScroll = productCarousel.scrollLeft
+  carouselDragMoved = false
   productCarousel.setPointerCapture(event.pointerId)
 })
 
 productCarousel.addEventListener('pointermove', (event) => {
   if (!dragging) return
+  if (Math.abs(event.clientX - dragStartX) > 6) carouselDragMoved = true
   productCarousel.scrollLeft = initialScroll - (event.clientX - dragStartX)
 })
 
 productCarousel.addEventListener('pointerup', (event) => {
   if (!dragging || event.pointerId !== activePointerId) return
+  const brandLink = pendingBrandLink
+  const shouldNavigate = Boolean(brandLink) && !carouselDragMoved
   dragging = false
   activePointerId = null
+  pendingBrandLink = null
   if (productCarousel.hasPointerCapture(event.pointerId)) {
     productCarousel.releasePointerCapture(event.pointerId)
+  }
+  if (shouldNavigate) {
+    window.location.assign(brandLink.href)
+    return
   }
   const step = carouselStep()
   const destination = Math.min(
@@ -80,7 +92,16 @@ productCarousel.addEventListener('pointerup', (event) => {
 productCarousel.addEventListener('pointercancel', () => {
   dragging = false
   activePointerId = null
+  pendingBrandLink = null
+  carouselDragMoved = false
 })
+
+productCarousel.addEventListener('click', (event) => {
+  if (!carouselDragMoved) return
+  event.preventDefault()
+  event.stopPropagation()
+  carouselDragMoved = false
+}, true)
 
 
 productCarousel.addEventListener('scroll', updateCarouselDots, {

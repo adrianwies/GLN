@@ -3,6 +3,8 @@ import { formatPrice, readCart, setCartQuantity } from './cart-store.js'
 
 const drawer = document.querySelector('[data-cart-drawer]')
 const WHATSAPP_NUMBER = '51960687318'
+const FREE_DELIVERY_FROM = 250
+const DELIVERY_FEE = 25
 
 if (drawer) {
   const backdrop = document.querySelector('[data-cart-backdrop]')
@@ -16,16 +18,19 @@ if (drawer) {
     const cart = readCart()
     const selected = products.map((product) => ({ product, quantity: cart[product.slug] || 0 })).filter(({ quantity }) => quantity > 0)
     const totalUnits = selected.reduce((sum, { quantity }) => sum + quantity, 0)
-    const total = selected.reduce((sum, { product, quantity }) => sum + Number(product.price || 0) * quantity, 0)
+    const allPricesKnown = selected.every(({ product }) => Number(product.price) > 0)
+    const subtotal = selected.reduce((sum, { product, quantity }) => sum + Number(product.price || 0) * quantity, 0)
+    const delivery = allPricesKnown && selected.length && subtotal < FREE_DELIVERY_FROM ? DELIVERY_FEE : 0
+    const total = subtotal + delivery
 
     drawer.querySelector('[data-cart-list]').innerHTML = selected.map(({ product, quantity }) => {
       const subtotal = Number(product.price || 0) * quantity
       return `<article>
         <img src="${product.image}" alt="${product.name}" />
-        <div class="cart-item-copy"><small>${product.category} · ${product.volume}</small><h3>${product.name}</h3><span>${formatPrice(product.price)} c/u</span>
+        <div class="cart-item-copy"><small>${product.category} · ${product.volume}</small><h3>${product.name}</h3><span>${Number(product.price) > 0 ? `${formatPrice(product.price)} c/u` : 'Precio por confirmar'}</span>
           <div class="cart-quantity" aria-label="Cantidad de ${product.name}"><button data-cart-decrease="${product.slug}" type="button" aria-label="Reducir ${product.name}">−</button><output>${quantity}</output><button data-cart-increase="${product.slug}" type="button" aria-label="Aumentar ${product.name}">+</button></div>
         </div>
-        <div class="cart-item-end"><strong>${formatPrice(subtotal)}</strong><button class="cart-remove" data-cart-remove="${product.slug}" type="button" aria-label="Quitar ${product.name}">×</button></div>
+        <div class="cart-item-end"><strong>${Number(product.price) > 0 ? formatPrice(subtotal) : 'Por confirmar'}</strong><button class="cart-remove" data-cart-remove="${product.slug}" type="button" aria-label="Quitar ${product.name}">×</button></div>
       </article>`
     }).join('')
 
@@ -36,15 +41,22 @@ if (drawer) {
     drawer.querySelector('[data-cart-products]').textContent = selected.length
     const totalBox = drawer.querySelector('[data-cart-total]')
     totalBox.hidden = !selected.length
-    drawer.querySelector('[data-cart-total-value]').textContent = formatPrice(total)
+    drawer.querySelector('[data-cart-subtotal-value]').textContent = allPricesKnown ? formatPrice(subtotal) : 'Por confirmar'
+    drawer.querySelector('[data-cart-delivery-value]').textContent = allPricesKnown ? (delivery ? formatPrice(delivery) : 'Gratis') : 'Por confirmar'
+    drawer.querySelector('[data-cart-total-value]').textContent = allPricesKnown ? formatPrice(total) : 'Por confirmar'
+    drawer.querySelector('[data-cart-delivery-note]').textContent = !allPricesKnown
+      ? 'Los precios y el delivery se confirmar\u00e1n por WhatsApp.'
+      : delivery
+        ? `Agrega ${formatPrice(FREE_DELIVERY_FROM - subtotal)} m\u00e1s para obtener delivery gratis.`
+        : 'Tu pedido tiene delivery gratis en Lima Metropolitana.'
     const action = drawer.querySelector('[data-cart-action]')
     action.classList.toggle('disabled', !selected.length)
     if (selected.length) {
       const lines = selected.flatMap(({ product, quantity }, index) => [
         `${index + 1}. ${product.name}`,
         `   Cantidad: ${quantity}`,
-        `   Precio unitario: ${formatPrice(product.price)}`,
-        `   Subtotal: ${formatPrice(Number(product.price) * quantity)}`,
+        `   Precio unitario: ${Number(product.price) > 0 ? formatPrice(product.price) : 'Por confirmar'}`,
+        `   Subtotal: ${Number(product.price) > 0 ? formatPrice(Number(product.price) * quantity) : 'Por confirmar'}`,
         '',
       ])
       const message = [
@@ -54,7 +66,9 @@ if (drawer) {
         ...lines,
         'RESUMEN DEL PEDIDO',
         `Total de unidades: ${totalUnits}`,
-        `Total a pagar: ${formatPrice(total)}`,
+        `Subtotal de productos: ${allPricesKnown ? formatPrice(subtotal) : 'Por confirmar'}`,
+        `Delivery en Lima Metropolitana: ${allPricesKnown ? (delivery ? formatPrice(delivery) : 'Gratis') : 'Por confirmar'}`,
+        `Total estimado: ${allPricesKnown ? formatPrice(total) : 'Por confirmar'}`,
         '',
         'Quedo atento a la confirmación. Gracias.',
       ].join('\n')

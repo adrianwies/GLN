@@ -1,4 +1,5 @@
 import './header.css'
+import '../delivery-banner/delivery-banner.js'
 import '../preloader/preloader.js'
 import '../age-gate/age-gate.js'
 

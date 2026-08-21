@@ -31,7 +31,7 @@ export function renderProductCard(product, options = {}) {
   card.querySelector('[data-product-specs]').textContent = `${product.category} · ${product.volume} · ${product.alcohol}`
   card.querySelector('[data-product-name]').textContent = product.name
   card.querySelector('[data-product-notes]').textContent = product.notes.join(' · ')
-  card.querySelector('[data-product-price]').textContent = formatPrice(product.price)
+  card.querySelector('[data-product-price]').textContent = Number(product.price) > 0 ? formatPrice(product.price) : 'Consultar precio'
   card.querySelectorAll('[data-product-link]').forEach((link) => {
     link.href = url
     link.setAttribute('aria-label', `Ver ${product.name}`)

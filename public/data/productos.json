@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "order": 1,
     "slug": "bola-ocho-negroni",
     "name": "Bola Ocho Negroni",
@@ -22,10 +23,13 @@
     "description": "Un clásico italiano listo para servir, con un balance elegante entre notas cítricas, amargas y especiadas.",
     "badge": "Destacado",
     "color": "#9b6638",
-    "logo": "/images/logo-bolaocho.png",
-    "image": "/images/negroni-licor.png"
+    "logo": "/images/logo-bolaocho.webp",
+    "image": "/images/negroni-licor.webp",
+    "featured": true,
+    "price": null
   },
   {
+    "id": 2,
     "order": 2,
     "slug": "bola-ocho-capitan",
     "name": "Bola Ocho Capitán",
@@ -48,10 +52,13 @@
     "description": "La interpretación lista para servir de un emblema de la coctelería peruana, intensa, aromática y equilibrada.",
     "badge": "",
     "color": "#8d543c",
-    "logo": "/images/logo-bolaocho.png",
-    "image": "/images/bolaocho-capitan.png"
+    "logo": "/images/logo-bolaocho.webp",
+    "image": "/images/bolaocho-capitan.webp",
+    "featured": false,
+    "price": 20
   },
   {
+    "id": 3,
     "order": 3,
     "slug": "bola-ocho-espresso-martini",
     "name": "Bola Ocho Espresso Martini",
@@ -74,10 +81,13 @@
     "description": "Un cóctel vibrante de perfil tostado y textura sedosa, ideal para cerrar la noche con carácter.",
     "badge": "",
     "color": "#594137",
-    "logo": "/images/logo-bolaocho.png",
-    "image": "/images/bolaocho-martini.png"
+    "logo": "/images/logo-bolaocho.webp",
+    "image": "/images/bolaocho-martini.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 4,
     "order": 4,
     "slug": "bola-ocho-negroni-mezcal",
     "name": "Bola Ocho Negroni Mezcal",
@@ -99,12 +109,15 @@
       "ahumado"
     ],
     "description": "Una versión audaz del Negroni donde el carácter ahumado del mezcal acompaña su amargor cítrico.",
-    "badge": "",
+    "badge": "Destacado",
     "color": "#695548",
-    "logo": "/images/logo-bolaocho.png",
-    "image": "/images/negroni-mezcal.png"
+    "logo": "/images/logo-bolaocho.webp",
+    "image": "/images/negroni-mezcal.webp",
+    "featured": true,
+    "price": null
   },
   {
+    "id": 5,
     "order": 5,
     "slug": "bola-ocho-negroni-pisco",
     "name": "Bola Ocho Negroni Pisco",
@@ -126,12 +139,15 @@
       "pisco"
     ],
     "description": "La personalidad aromática del pisco peruano se integra a un Negroni herbal, cítrico y contemporáneo.",
-    "badge": "",
+    "badge": "Destacado",
     "color": "#b07145",
-    "logo": "/images/logo-bolaocho.png",
-    "image": "/images/negroni-pisco.png"
+    "logo": "/images/logo-bolaocho.webp",
+    "image": "/images/negroni-pisco.webp",
+    "featured": true,
+    "price": null
   },
   {
+    "id": 6,
     "order": 6,
     "slug": "bola-ocho-negroni-ron",
     "name": "Bola Ocho Negroni Ron",
@@ -153,12 +169,15 @@
       "ron"
     ],
     "description": "Una lectura cálida del Negroni, con la suavidad del ron y un final especiado de agradable persistencia.",
-    "badge": "",
+    "badge": "Destacado",
     "color": "#8c5136",
-    "logo": "/images/logo-bolaocho.png",
-    "image": "/images/negroni-ron.png"
+    "logo": "/images/logo-bolaocho.webp",
+    "image": "/images/negroni-ron.webp",
+    "featured": true,
+    "price": null
   },
   {
+    "id": 7,
     "order": 7,
     "slug": "soviet-vodka-original-1l",
     "name": "Soviet Vodka Original 1 L",
@@ -180,12 +199,15 @@
       "original"
     ],
     "description": "Vodka premium de perfil limpio y cristalino, versátil para servir frío o como base de coctelería.",
-    "badge": "Clásico",
+    "badge": "",
     "color": "#b9c9d1",
-    "logo": "/images/logo-soviet.png",
-    "image": "/images/soviet-vodka.png"
+    "logo": "/images/logo-soviet.webp",
+    "image": "/images/soviet-vodka.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 8,
     "order": 8,
     "slug": "soviet-vodka-original-2l",
     "name": "Soviet Vodka Original 2 L",
@@ -209,10 +231,13 @@
     "description": "El perfil limpio de Soviet Original en una presentación de mayor rendimiento para reuniones y barras.",
     "badge": "",
     "color": "#aebfc8",
-    "logo": "/images/logo-soviet.png",
-    "image": "/images/soviet-vodka2l.png"
+    "logo": "/images/logo-soviet.webp",
+    "image": "/images/soviet-vodka2l.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 9,
     "order": 9,
     "slug": "soviet-green-apple-1l",
     "name": "Soviet Green Apple 1 L",
@@ -236,10 +261,13 @@
     "description": "Vodka de manzana verde con un perfil fresco y frutal que aporta vivacidad a cócteles y combinados.",
     "badge": "",
     "color": "#9cae63",
-    "logo": "/images/logo-soviet.png",
-    "image": "/images/soviet-greenapple.png"
+    "logo": "/images/logo-soviet.webp",
+    "image": "/images/soviet-greenapple.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 10,
     "order": 10,
     "slug": "soviet-green-apple-2l",
     "name": "Soviet Green Apple 2 L",
@@ -263,10 +291,13 @@
     "description": "El sabor fresco de manzana verde de Soviet en formato de 2 litros, pensado para compartir y mezclar.",
     "badge": "",
     "color": "#91a35a",
-    "logo": "/images/logo-soviet.png",
-    "image": "/images/soviet-greenapple2l.png"
+    "logo": "/images/logo-soviet.webp",
+    "image": "/images/soviet-greenapple2l.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 11,
     "order": 11,
     "slug": "el-mariachi-rubio",
     "name": "El Mariachi Rubio",
@@ -289,10 +320,13 @@
     "description": "Licor rubio de color dorado y carácter intenso, creado para disfrutarse solo o en combinaciones de barra.",
     "badge": "",
     "color": "#c49349",
-    "logo": "/images/logo-mariachi.png",
-    "image": "/images/mariachi-rubio.png"
+    "logo": "/images/logo-mariachi.webp",
+    "image": "/images/mariachi-rubio.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 12,
     "order": 12,
     "slug": "el-mariachi-blanco",
     "name": "El Mariachi Blanco",
@@ -313,12 +347,15 @@
       "licor"
     ],
     "description": "Licor blanco de apariencia cristalina y perfil limpio, ideal para servir frío o utilizar como una base versátil en coctelería.",
-    "badge": "Nuevo",
+    "badge": "",
     "color": "#aebec3",
-    "logo": "/images/logo-mariachi.png",
-    "image": "/images/mariachi-blanco.png"
+    "logo": "/images/logo-mariachi.webp",
+    "image": "/images/mariachi-blanco.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 13,
     "order": 13,
     "slug": "mr-jigger-menta",
     "name": "Mr. Jigger Menta",
@@ -342,10 +379,13 @@
     "description": "Licor de menta refrescante y herbal, ideal para cócteles vibrantes, digestivos y preparaciones de postre.",
     "badge": "",
     "color": "#4b846b",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-menta.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-menta.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 14,
     "order": 14,
     "slug": "mr-jigger-triple-seco",
     "name": "Mr. Jigger Triple Seco",
@@ -366,12 +406,15 @@
       "citrico"
     ],
     "description": "Licor cítrico de naranja y final seco, indispensable para margaritas y clásicos de la coctelería.",
-    "badge": "Destacado",
+    "badge": "",
     "color": "#c67837",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-triplesec.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-triplesec.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 15,
     "order": 15,
     "slug": "mr-jigger-blue-curacao",
     "name": "Mr. Jigger Blue Curaçao",
@@ -394,10 +437,13 @@
     "description": "Licor cítrico de intenso color azul que aporta notas de naranja y una presencia visual inconfundible.",
     "badge": "",
     "color": "#2782a8",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-curacao.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-curacao.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 16,
     "order": 16,
     "slug": "mr-jigger-amaretto",
     "name": "Mr. Jigger Amaretto",
@@ -421,10 +467,13 @@
     "description": "Licor dulce y aromático con notas de almendra, perfecto para beber con hielo, mezclar o acompañar postres.",
     "badge": "",
     "color": "#9a603b",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-amaretto.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-amaretto.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 17,
     "order": 17,
     "slug": "mr-jigger-sandia",
     "name": "Mr. Jigger Sandía",
@@ -448,10 +497,13 @@
     "description": "Licor frutal de sandía, jugoso y refrescante, pensado para mezclas ligeras y cócteles llenos de color.",
     "badge": "",
     "color": "#c75a62",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-sandia.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-sandia.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 18,
     "order": 18,
     "slug": "mr-jigger-frutos-rojos",
     "name": "Mr. Jigger Frutos Rojos",
@@ -474,10 +526,13 @@
     "description": "Una mezcla frutal de dulzor equilibrado y acidez vivaz para cócteles aromáticos y refrescantes.",
     "badge": "",
     "color": "#9f3f58",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-frutosrojos.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-frutosrojos.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 19,
     "order": 19,
     "slug": "mr-jigger-fresa",
     "name": "Mr. Jigger Fresa",
@@ -500,10 +555,13 @@
     "description": "Licor de fresa dulce y expresivo, una base versátil para bebidas cremosas, frozen y cócteles frutales.",
     "badge": "",
     "color": "#be4c55",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-fresa.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-fresa.webp",
+    "featured": false,
+    "price": null
   },
   {
+    "id": 20,
     "order": 20,
     "slug": "mr-jigger-durazno",
     "name": "Mr. Jigger Durazno",
@@ -526,11 +584,14 @@
     "description": "Licor de durazno suave y aromático que aporta dulzor frutal a combinados, spritzes y cócteles tropicales.",
     "badge": "",
     "color": "#cf8558",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-durazno.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-durazno.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 23,
+    "id": 21,
+    "order": 21,
     "slug": "mr-jigger-melon",
     "name": "Mr. Jigger Melón",
     "brand": "Mr. Jigger",
@@ -553,11 +614,14 @@
     "description": "Licor de melón de perfil dulce y fresco, ideal para mezclas tropicales y preparaciones de color vibrante.",
     "badge": "",
     "color": "#78a85d",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-melon.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-melon.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 24,
+    "id": 22,
+    "order": 22,
     "slug": "mr-jigger-apple-sour",
     "name": "Mr. Jigger Apple Sour",
     "brand": "Mr. Jigger",
@@ -580,11 +644,14 @@
     "description": "Licor de manzana con un toque ácido y refrescante, diseñado para cócteles jóvenes y equilibrados.",
     "badge": "",
     "color": "#8da64f",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-applesour.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-applesour.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 25,
+    "id": 23,
+    "order": 23,
     "slug": "mr-jigger-cafe",
     "name": "Mr. Jigger Café",
     "brand": "Mr. Jigger",
@@ -607,11 +674,14 @@
     "description": "Licor de café con notas tostadas y dulces, perfecto para sobremesas, cócteles cremosos y bebidas calientes.",
     "badge": "",
     "color": "#65483c",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-cafe.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-cafe.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 26,
+    "id": 24,
+    "order": 24,
     "slug": "mr-jigger-cacao",
     "name": "Mr. Jigger Cacao",
     "brand": "Mr. Jigger",
@@ -634,37 +704,14 @@
     "description": "Licor de cacao dulce y sedoso, creado para coctelería de postre y combinaciones de perfil indulgente.",
     "badge": "",
     "color": "#76513c",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-cacao.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-cacao.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 27,
-    "slug": "mr-jigger-neutro-cocteleria",
-    "name": "Mr. Jigger Neutro para Coctelería",
-    "brand": "Mr. Jigger",
-    "category": "Licor",
-    "subtype": "Base para coctelería",
-    "volume": "1 L",
-    "alcohol": "40% Alc./Vol.",
-    "origin": "Perú",
-    "notes": [
-      "Neutro",
-      "Versátil",
-      "Intenso"
-    ],
-    "tags": [
-      "licor",
-      "cocteleria",
-      "base"
-    ],
-    "description": "Una base neutra de alta graduación diseñada para maceraciones, mezclas y creaciones profesionales de barra.",
-    "badge": "",
-    "color": "#89969a",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-licor.png"
-  },
-  {
-    "order": 22,
+    "id": 25,
+    "order": 25,
     "slug": "mr-jigger-banana",
     "name": "Mr. Jigger Banana",
     "brand": "Mr. Jigger",
@@ -687,11 +734,14 @@
     "description": "Licor tropical de banana con dulzor envolvente, ideal para frozen, cócteles cremosos y combinaciones exóticas.",
     "badge": "",
     "color": "#c0a345",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-banana.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-banana.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 21,
+    "id": 26,
+    "order": 26,
     "slug": "mr-jigger-coco",
     "name": "Mr. Jigger Coco",
     "brand": "Mr. Jigger",
@@ -714,11 +764,14 @@
     "description": "Licor de coco de perfil tropical y cremoso, perfecto para piñas coladas y mezclas refrescantes.",
     "badge": "",
     "color": "#c7b994",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-coco.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-coco.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 28,
+    "id": 27,
+    "order": 27,
     "slug": "mr-jigger-bitter-amargo",
     "name": "Mr. Jigger Bitter Amargo",
     "brand": "Mr. Jigger",
@@ -740,11 +793,14 @@
     "description": "Bitter aromático concentrado que añade profundidad, amargor y complejidad con unas pocas gotas.",
     "badge": "",
     "color": "#784a35",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-amargo.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-amargo.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 29,
+    "id": 28,
+    "order": 28,
     "slug": "mr-jigger-bitter-naranja",
     "name": "Mr. Jigger Bitter Naranja",
     "brand": "Mr. Jigger",
@@ -766,11 +822,14 @@
     "description": "Bitter de naranja concentrado, con amargor cítrico para perfumar y equilibrar cócteles clásicos y modernos.",
     "badge": "",
     "color": "#b66a35",
-    "logo": "/images/logo-jigger.png",
-    "image": "/images/jigger-bitternaranja.png"
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-bitternaranja.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 31,
+    "id": 29,
+    "order": 29,
     "slug": "bandolero-jarabe-goma",
     "name": "Bandolero Jarabe de Goma",
     "brand": "Bandolero",
@@ -792,11 +851,14 @@
     "description": "Jarabe de goma de dulzor uniforme, esencial para aportar textura y equilibrio a todo tipo de cócteles.",
     "badge": "",
     "color": "#b29a6d",
-    "logo": "/images/logo-bandolero.png",
-    "image": "/images/bandolero-goma.png"
+    "logo": "/images/logo-bandolero.webp",
+    "image": "/images/bandolero-goma.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 32,
+    "id": 30,
+    "order": 30,
     "slug": "bandolero-jarabe-granadina",
     "name": "Bandolero Jarabe de Granadina",
     "brand": "Bandolero",
@@ -819,11 +881,14 @@
     "description": "Jarabe de granadina frutal y colorido, pensado para endulzar y dar una presentación vibrante a las bebidas.",
     "badge": "",
     "color": "#a63f46",
-    "logo": "/images/logo-bandolero.png",
-    "image": "/images/bandolero-granadina.png"
+    "logo": "/images/logo-bandolero.webp",
+    "image": "/images/bandolero-granadina.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 30,
+    "id": 31,
+    "order": 31,
     "slug": "bandolero-bitter-amargo",
     "name": "Bandolero Bitter Amargo",
     "brand": "Bandolero",
@@ -845,11 +910,14 @@
     "description": "Bitter amargo y aromático para aportar estructura, profundidad y un final complejo a los cócteles.",
     "badge": "",
     "color": "#7b4937",
-    "logo": "/images/logo-bandolero.png",
-    "image": "/images/bandolero-amargo.png"
+    "logo": "/images/logo-bandolero.webp",
+    "image": "/images/bandolero-amargo.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 33,
+    "id": 32,
+    "order": 32,
     "slug": "bandolero-macerado-anis",
     "name": "Bandolero Macerado de Anís",
     "brand": "Bandolero",
@@ -872,11 +940,14 @@
     "description": "Licor macerado de anís con un perfil herbal y aromático, de paso amable y final persistentemente especiado.",
     "badge": "",
     "color": "#8f7658",
-    "logo": "/images/logo-bandolero.png",
-    "image": "/images/bandolero-anis.png"
+    "logo": "/images/logo-bandolero.webp",
+    "image": "/images/bandolero-anis.webp",
+    "featured": false,
+    "price": null
   },
   {
-    "order": 34,
+    "id": 33,
+    "order": 33,
     "slug": "bandolero-licor-coca",
     "name": "Bandolero Licor de Coca",
     "brand": "Bandolero",
@@ -898,7 +969,38 @@
     "description": "Licor de coca de marcado carácter herbal e intensidad aromática, inspirado en un ingrediente emblemático del Perú.",
     "badge": "",
     "color": "#64744e",
-    "logo": "/images/logo-bandolero.png",
-    "image": "/images/bandolero-coca.png"
+    "logo": "/images/logo-bandolero.webp",
+    "image": "/images/bandolero-coca.webp",
+    "featured": false,
+    "price": null
+  },
+  {
+    "id": 34,
+    "order": 34,
+    "slug": "mr-jigger-neutro-cocteleria",
+    "name": "Mr. Jigger Neutro para Coctelería",
+    "brand": "Mr. Jigger",
+    "category": "Licor",
+    "subtype": "Base para coctelería",
+    "volume": "1 L",
+    "alcohol": "40% Alc./Vol.",
+    "origin": "Perú",
+    "notes": [
+      "Neutro",
+      "Versátil",
+      "Intenso"
+    ],
+    "tags": [
+      "licor",
+      "cocteleria",
+      "base"
+    ],
+    "description": "Una base neutra de alta graduación diseñada para maceraciones, mezclas y creaciones profesionales de barra.",
+    "badge": "",
+    "color": "#89969a",
+    "logo": "/images/logo-jigger.webp",
+    "image": "/images/jigger-licor.webp",
+    "featured": false,
+    "price": null
   }
 ]

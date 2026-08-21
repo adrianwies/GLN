@@ -10,7 +10,7 @@
 /* Isotipo decorativo compartido con los heroes de Contacto y Nosotros. */
 .terms-hero{grid-template-columns:1fr;isolation:isolate}
 .terms-hero:before{z-index:0;background:linear-gradient(90deg,#031c29e8 0%,#031c29b8 48%,#031c2952 100%),linear-gradient(0deg,#031c29b8 0%,transparent 58%)}
-.terms-hero:after{content:'';position:absolute;z-index:0;right:clamp(-210px,-10vw,-120px);top:54%;width:clamp(470px,44vw,650px);height:clamp(470px,44vw,650px);background:url('/images/gln-icon.png') center/contain no-repeat;opacity:.085;filter:grayscale(1) contrast(1.15);mix-blend-mode:screen;transform:translateY(-50%);pointer-events:none}
+.terms-hero:after{content:'';position:absolute;z-index:0;right:clamp(-210px,-10vw,-120px);top:54%;width:clamp(470px,44vw,650px);height:clamp(470px,44vw,650px);background:url('/images/gln-icon.webp') center/contain no-repeat;opacity:.085;filter:grayscale(1) contrast(1.15);mix-blend-mode:screen;transform:translateY(-50%);pointer-events:none}
 .terms-hero__copy{max-width:780px}
 .terms-hero__seal{display:none}
 .terms-layout{display:block}

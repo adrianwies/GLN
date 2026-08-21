@@ -6,6 +6,27 @@ import '../src/components/product-card/product-card.css?catalogo'
 import { enableProductCardNavigation, renderProductCard } from '../src/components/product-card/product-card.js'
 import { changeCartQuantity, readCart } from '../src/components/cart-drawer/cart-store.js'
 
+const brandRoutes = {
+  'bola-ocho': { name: 'Bola Ocho', title: 'Bola Ocho: cócteles listos para servir | GLN Perú', description: 'Conoce los cócteles listos para servir Bola Ocho disponibles en Perú. Explora presentaciones, perfiles y productos del catálogo GLN.', line: 'Cócteles listos para servir con carácter y perfiles clásicos.' },
+  soviet: { name: 'Soviet', title: 'Soviet Vodka: productos y presentaciones | GLN Perú', description: 'Explora Soviet Vodka y sus presentaciones disponibles en Perú. Consulta características, productos y disponibilidad en el catálogo GLN.', line: 'Vodka peruano para disfrutar puro o como base de coctelería.' },
+  'el-mariachi': { name: 'El Mariachi', title: 'El Mariachi: licores y sabores | GLN Perú', description: 'Descubre los licores El Mariachi disponibles en Perú, sus sabores, presentaciones y usos para celebraciones y coctelería.', line: 'Licores versátiles para celebraciones, mezclas y nuevos sabores.' },
+  'mr-jigger': { name: 'Mr. Jigger', title: 'Mr. Jigger: licores frutales y bitters | GLN Perú', description: 'Explora los licores frutales y bitters Mr. Jigger para coctelería. Conoce sabores, presentaciones y disponibilidad en Perú.', line: 'Licores frutales y bitters creados para una coctelería versátil.' },
+  bandolero: { name: 'Bandolero', title: 'Bandolero: jarabes, bitters y licores | GLN Perú', description: 'Conoce la línea Bandolero de jarabes, bitters y licores para coctelería. Explora productos y disponibilidad en Perú.', line: 'Jarabes, bitters y licores para barras con personalidad.' },
+}
+
+const brandRouteEntries = Object.entries(brandRoutes)
+const brandRouteByName = new Map(brandRouteEntries.map(([slug, brand]) => [brand.name, { ...brand, slug }]))
+const brandFromLocation = () => {
+  const match = window.location.pathname.match(/^\/catalogo\/marca\/([a-z0-9-]+)\/?$/)
+  return match && brandRoutes[match[1]] ? { ...brandRoutes[match[1]], slug: match[1] } : null
+}
+
+const catalogSeo = {
+  title: 'Catálogo de licores y coctelería | GLN Perú',
+  description: 'Explora el catálogo de GLN Perú: cócteles listos para servir, vodka, licores, bitters, jarabes y productos para coctelería.',
+  url: 'https://gln.com.pe/catalogo/',
+}
+
 const state = {
   products: [],
   category: 'Todos',
@@ -18,6 +39,41 @@ const state = {
 const $ = (selector) => document.querySelector(selector)
 const grid = $('#product-grid')
 const empty = $('#empty-state')
+
+function updateMeta(selector, content) {
+  document.querySelector(selector)?.setAttribute('content', content)
+}
+
+function applyBrandPresentation(brand) {
+  const seo = brand
+    ? { title: brand.title, description: brand.description, url: `https://gln.com.pe/catalogo/marca/${brand.slug}/` }
+    : catalogSeo
+  document.title = seo.title
+  document.querySelector('meta[name="description"]').content = seo.description
+  document.querySelector('link[rel="canonical"]').href = seo.url
+  updateMeta('meta[property="og:title"]', seo.title)
+  updateMeta('meta[property="og:description"]', seo.description)
+  updateMeta('meta[property="og:url"]', seo.url)
+  updateMeta('meta[name="twitter:title"]', seo.title)
+  updateMeta('meta[name="twitter:description"]', seo.description)
+  const hero = document.querySelector('.catalog-hero')
+  if (brand) {
+    hero.querySelector('.tag').textContent = 'Colección de marca · GLN Perú'
+    hero.querySelector('h1').innerHTML = `${brand.name}<br /><em>productos con identidad.</em>`
+    hero.querySelector('.hero-copy>p:last-child').textContent = brand.line
+  } else {
+    hero.querySelector('.tag').textContent = 'Portafolio GLN · 2026'
+    hero.querySelector('h1').innerHTML = 'Encuentra el carácter<br /><em>de tu próxima celebración.</em>'
+    hero.querySelector('.hero-copy>p:last-child').textContent = 'Descubre nuestras marcas, compara perfiles y arma una selección a tu medida.'
+  }
+}
+
+function syncBrandRoute(brandName, { replace = false } = {}) {
+  const brand = brandRouteByName.get(brandName) || null
+  const path = brand ? `/catalogo/marca/${brand.slug}/` : '/catalogo/'
+  window.history[replace ? 'replaceState' : 'pushState']({}, '', path)
+  applyBrandPresentation(brand)
+}
 
 function setupCatalogSelect(select) {
   const field = select.closest('label')
@@ -131,7 +187,11 @@ function filteredProducts() {
     const haystack = [product.name, product.brand, product.category, ...product.notes].join(' ').toLocaleLowerCase('es')
     return (state.category === 'Todos' || product.category === state.category) && (!state.brand || product.brand === state.brand) && (!query || haystack.includes(query))
   })
-  return products.sort((a, b) => state.sort === 'name' ? a.name.localeCompare(b.name) : state.sort === 'category' ? a.category.localeCompare(b.category) : a.order - b.order)
+  return products.sort((a, b) => state.sort === 'name'
+    ? a.name.localeCompare(b.name)
+    : state.sort === 'category'
+      ? a.category.localeCompare(b.category) || a.order - b.order
+      : Number(b.featured) - Number(a.featured) || a.order - b.order)
 }
 
 function render() {
@@ -148,6 +208,7 @@ function resetFilters() {
   state.category = 'Todos'; state.brand = ''; state.query = ''
   $('#search').value = ''; $('#brand-filter').value = ''; $('#category-filter').value = 'Todos'
   syncCatalogSelect('#brand-filter'); syncCatalogSelect('#category-filter')
+  syncBrandRoute('')
   render()
 }
 
@@ -160,12 +221,20 @@ document.addEventListener('click', (event) => {
 enableProductCardNavigation(grid)
 
 $('#search').addEventListener('input', (event) => { state.query = event.target.value.trim(); render() })
-$('#brand-filter').addEventListener('change', (event) => { state.brand = event.target.value; render() })
+$('#brand-filter').addEventListener('change', (event) => { state.brand = event.target.value; syncBrandRoute(state.brand); render() })
 $('#category-filter').addEventListener('change', (event) => { state.category = event.target.value; render() })
 $('#sort').addEventListener('change', (event) => { state.sort = event.target.value; render() })
 $('#clear-filters').addEventListener('click', resetFilters)
 $('#empty-state button').addEventListener('click', resetFilters)
 window.addEventListener('gln-selection-change', () => { state.cart = readCart(); render() })
+window.addEventListener('popstate', () => {
+  const brand = brandFromLocation()
+  state.brand = brand?.name || ''
+  $('#brand-filter').value = state.brand
+  syncCatalogSelect('#brand-filter')
+  applyBrandPresentation(brand)
+  render()
+})
 
 async function init() {
   try {
@@ -176,10 +245,14 @@ async function init() {
     $('#category-filter').insertAdjacentHTML('beforeend', categories.slice(1).map((category) => `<option value="${category}">${category} (${state.products.filter((p) => p.category === category).length})</option>`).join(''))
     const brands = [...new Set(state.products.map((product) => product.brand))].sort()
     $('#brand-filter').insertAdjacentHTML('beforeend', brands.map((brand) => `<option>${brand}</option>`).join(''))
-    const requestedBrand = new URLSearchParams(window.location.search).get('marca')
+    const pathBrand = brandFromLocation()
+    const requestedBrand = pathBrand?.name || new URLSearchParams(window.location.search).get('marca')
     if (requestedBrand && brands.includes(requestedBrand)) {
       state.brand = requestedBrand
       $('#brand-filter').value = requestedBrand
+      syncBrandRoute(requestedBrand, { replace: true })
+    } else {
+      applyBrandPresentation(null)
     }
     document.querySelectorAll('.catalog-tools select').forEach(setupCatalogSelect)
     render()

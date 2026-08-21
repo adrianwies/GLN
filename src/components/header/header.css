@@ -9,8 +9,8 @@ site-header:not(.is-ready){
 site-header header {
   position: fixed;
   z-index: 20;
-  inset: 0 0 auto;
-  height: var(--header-height);
+  inset: var(--delivery-visible-offset, var(--delivery-banner-height)) 0 auto;
+  height: var(--nav-height);
   padding: 0 4vw;
   color: white;
   display: grid;
@@ -159,3 +159,5 @@ site-header .cart-icon svg{position:static;display:block;margin:0;transform:tran
 @media(max-width:1100px){site-header header{grid-template-columns:auto 1fr auto;gap:24px}site-header nav{gap:clamp(18px,2.5vw,34px)}site-header .explore{display:none}}
 @media(max-width:850px){site-header header,site-header header.solid{height:var(--header-height);padding:0 24px;grid-template-columns:1fr auto}site-header header.solid{backdrop-filter:none;-webkit-backdrop-filter:none;background:#092d3e}site-header .logo,site-header header.solid .logo{width:150px}site-header .menu{position:absolute;z-index:4;top:50%;right:24px;display:block;transform:translateY(-50%)}site-header nav{position:fixed;z-index:19;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;color:#fff;background:rgba(3,28,41,.99);opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .24s,transform .24s,visibility .24s}site-header nav.open{opacity:1;visibility:visible;transform:none}site-header nav a{color:inherit;font-size:1rem;opacity:1}site-header nav a.page-active,site-header nav a:hover,site-header nav a:focus-visible{color:var(--color-accent)}site-header .cart-link{display:none}}
 @media(max-width:520px){site-header header{padding-inline:18px}site-header .logo,site-header header.solid .logo{width:128px}site-header .menu{right:18px;width:40px;height:40px;padding:9px 8px}}
+
+@media(max-width:850px){site-header header,site-header header.solid{height:var(--nav-height)}}
